@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html class=overflow-hidden lang="ru">
+<head prefix="og: http://ogp.me/ns#">
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+    <link rel="stylesheet" href="{% static 'main/css/screen.min.css' %}">
+
+	<script data-pace-options='{ "elements": false,"ajax": false,"restartOnPushState": false,"restartOnRequestAfter": false }'
+            src="media/js/pace.min.js"></script>
+
+</head>
+<body>
+
+{% block body %}
+
+{% endblock %}
+
+<script src="{% static 'main/js/bundle.min.js' %}" defer></script>
+</body>
+</html>
+

@@ -1,0 +1,575 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block body %}
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__inner container-fluid">
+                <!--div.header__logo: img(src="media/img/logo.png" alt="")-->
+                <div class="header__logo">
+                    <img src="logo.svg" width="70px">
+
+
+                </div>
+            </div>
+        </header>
+        <div class="menu-panel">
+            <div class="menu-panel__inner">
+                <a class="phone" href="tel:+7 495 111 22 33">
+                    <div class="phone__inner">
+                        <i class="icon-phone mr-2"></i>
+                        <span>+7 495 111 22 33</span>
+                    </div>
+                </a>
+                <button class="menu" id="menu">
+                    <div class="menu__icon">
+                        <div class="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="menu__text">
+                        <div>МЕНЮ</div>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <nav class="navigation">
+            <div class="navigation__inner" id="scroll-container">
+                <ul class="nav">
+                    <li class="nav__item current">
+                        <a class="nav__link" href="#">
+                            Главная
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="https://salazckin.github.io/third/about">
+                            О компании
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="https://salazckin.github.io/third/catalog">
+                            Проекты
+                        </a>
+                    </li>
+                    <li class="nav__item nav__item--has-subnav">
+					<span class="nav__link">
+						Услуги
+						<span class="nav__status"></span>
+					</span>
+                        <div class="subnav">
+                            <div class="subnav__item">
+                                <a class="subnav__link" href="https://salazckin.github.io/third/services">В раздел</a>
+                            </div>
+                            <div class="subnav__item">
+                                <a class="subnav__link" href="https://salazckin.github.io/third/services/design">Дизайн
+                                    и проектирование</a>
+                            </div>
+                            <div class="subnav__item">
+                                <a class="subnav__link" href="https://salazckin.github.io/third/services/home-repairs">Ремонт
+                                    квартир и домов</a>
+                            </div>
+                            <div class="subnav__item">
+                                <a class="subnav__link"
+                                   href="https://salazckin.github.io/third/services/office-repairs">Ремонт офисов</a>
+                            </div>
+                            <div class="subnav__item">
+                                <a class="subnav__link"
+                                   href="https://salazckin.github.io/third/services/supevision-n-support">Согласование
+                                    перепланировок и технадзор</a>
+                            </div>
+                            <div class="subnav__item">
+                                <a class="subnav__link" href="https://salazckin.github.io/third/services/construction">Строительство
+                                    домов</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="https://salazckin.github.io/third/contacts">
+                            Контакты
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <div class="p-home">
+            <div class="panels-wrap">
+                <div class="hero-panel" id="hero-panel-offices">
+                    <div class="hero-panel__inner">
+                        <ul class="hero-panel__list">
+                            <li>
+                                <a class="project-card project-card--tile"
+                                   href="https://salazckin.github.io/third/catalog/123">
+                                    <div class="project-card__img-w">
+                                        <picture>
+                                            <source srcset="/content/data/0/cafe-001.png?format=webp" type="image/webp">
+                                            <source srcset="/content/data/0/cafe-001.png" type="image/png">
+                                            <img src="content/data/0/cafe-001.png"/>
+                                        </picture>
+
+                                    </div>
+                                    <div class="project-card__decor"></div>
+                                    <div class="project-card__text">
+                                        <div class="project-card__title">Квартира-студия</div>
+                                        <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hero-panel" id="hero-panel-repair">
+                    <div class="hero-panel__inner">
+                        <ul class="hero-panel__list">
+                            <li>
+                                <a class="project-card project-card--tile"
+                                   href="https://salazckin.github.io/third/catalog/123">
+                                    <div class="project-card__img-w">
+                                        <picture>
+                                            <source srcset="/content/data/5/Krasnogorsky-001.png?format=webp"
+                                                    type="image/webp">
+                                            <source srcset="/content/data/5/Krasnogorsky-001.png" type="image/png">
+                                            <img src="content/data/5/Krasnogorsky-001.png"
+                                                 alt="Квартира на&#160;Красногорском бульваре"/>
+                                        </picture>
+
+                                    </div>
+                                    <div class="project-card__decor"></div>
+                                    <div class="project-card__text">
+                                        <div class="project-card__title">Квартира-студия</div>
+                                        <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="project-card project-card--tile"
+                                   href="https://salazckin.github.io/third/catalog/123">
+                                    <div class="project-card__img-w">
+                                        <picture>
+                                            <source srcset="/content/data/7/Novoyasen-001.png?format=webp"
+                                                    type="image/webp">
+                                            <source srcset="/content/data/7/Novoyasen-001.png" type="image/png">
+                                            <img src="content/data/7/Novoyasen-001.png"/>
+                                        </picture>
+
+                                    </div>
+                                    <div class="project-card__decor"></div>
+                                    <div class="project-card__text">
+                                        <div class="project-card__title">Квартира-студия</div>
+                                        <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="project-card project-card--tile"
+                                   href="https://salazckin.github.io/third/catalog/123">
+                                    <div class="project-card__img-w">
+                                        <picture>
+                                            <source srcset="/content/data/1/Spiridonovka-001.png?format=webp"
+                                                    type="image/webp">
+                                            <source srcset="/content/data/1/Spiridonovka-001.png" type="image/png">
+                                            <img src="content/data/1/Spiridonovka-001.png"/>
+                                        </picture>
+
+                                    </div>
+                                    <div class="project-card__decor"></div>
+                                    <div class="project-card__text">
+                                        <div class="project-card__title">ККвартира-студия</div>
+                                        <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="project-card project-card--tile"
+                                   href="https://salazckin.github.io/third/catalog/123">
+                                    <div class="project-card__img-w">
+                                        <picture>
+                                            <source srcset="/content/data/6/Aivazovsky-001.png?format=webp"
+                                                    type="image/webp">
+                                            <source srcset="/content/data/6/Aivazovsky-001.png" type="image/png">
+                                            <img src="content/data/6/Aivazovsky-001.png"/>
+                                        </picture>
+
+                                    </div>
+                                    <div class="project-card__decor"></div>
+                                    <div class="project-card__text">
+                                        <div class="project-card__title">Квартира-студия</div>
+                                        <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="section-wrap">
+                <div class="section section-hero section--active" data-nav-color="#ffffff">
+                    <div class="section-hero__bg">
+                        <picture>
+                            <source srcset="/content/data/3/01-home-slide.png?format=webp" type="image/webp">
+                            <source srcset="/content/data/3/01-home-slide.png" type="image/png">
+                            <img src="content/data/3/01-home-slide.png"/>
+                        </picture>
+
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-9">
+                                <h1 class="hero-title">
+                                    Меняем любое пространство к&nbsp;лучшему: строим дома, делаем ремонт в квартирах и
+                                    офисах
+
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="scroll-down" type="button">
+                        <div class="scroll-down__caption">
+                            вниз
+                        </div>
+                        <div class="scroll-down__line"></div>
+                    </button>
+                </div>
+                <div class="section section-design to-left" data-from="bottom">
+                    <div class="container">
+                        <div class="parallax-block">
+                            <div class="parallax-block__img-w">
+                                <picture>
+                                    <source srcset="/content/data/5/02-home-slide.png?format=webp" type="image/webp">
+                                    <source srcset="/content/data/5/02-home-slide.png" type="image/png">
+                                    <img src="content/data/5/02-home-slide.png"/>
+                                </picture>
+
+                            </div>
+                            <div class="parallax-block__text">
+                                <h2 class="parallax-block__title h1-like">
+                                    Дизайн<br/>и&nbsp;проектирование
+                                </h2>
+                                <div class="parallax-block__subtitle h3-like">
+                                    Продумываем до мелочей,<br/> бережём ваше время
+                                </div>
+
+                                <a class="parallax-block__more "
+                                   href="https://salazckin.github.io/third/services/design">узнать больше</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section section-repair-house to-right to-bottom" data-from="left">
+                    <div class="container">
+                        <div class="parallax-block">
+                            <div class="parallax-block__img-w">
+                                <picture>
+                                    <source srcset="/content/data/9/03-home-slide.png?format=webp" type="image/webp">
+                                    <source srcset="/content/data/9/03-home-slide.png" type="image/png">
+                                    <img src="content/data/9/03-home-slide.png"/>
+                                </picture>
+
+                            </div>
+                            <div class="parallax-block__text">
+                                <h2 class="parallax-block__title h1-like">
+                                    Ремонт квартир<br/>и&nbsp;домов
+                                </h2>
+                                <div class="parallax-block__subtitle h3-like">
+                                    Минимализм и&nbsp;лаконичность для&nbsp;комфортной жизни
+                                </div>
+
+                                <a class="parallax-block__more "
+                                   href="https://salazckin.github.io/third/services/home-repairs">узнать больше</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section section-repair-office to-top to-right" data-from="bottom">
+                    <div class="container">
+                        <div class="parallax-block">
+                            <div class="parallax-block__img-w">
+                                <picture>
+                                    <source srcset="/content/data/2/04-home-slide.png?format=webp" type="image/webp">
+                                    <source srcset="/content/data/2/04-home-slide.png" type="image/png">
+                                    <img src="content/data/2/04-home-slide.png"/>
+                                </picture>
+
+                            </div>
+                            <div class="parallax-block__text">
+                                <h2 class="parallax-block__title h1-like">
+                                    Ремонт<br>офисов
+                                </h2>
+                                <div class="parallax-block__subtitle h3-like">
+                                    Создаём пространство,<br/> где удобно заниматься своим делом
+                                </div>
+
+                                <a class="parallax-block__more"
+                                   href="https://salazckin.github.io/third/services/office-repairs">узнать больше</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section section-house-build to-left" data-from="right">
+                    <div class="container">
+                        <div class="parallax-block">
+                            <div class="parallax-block__img-w">
+                                <picture>
+                                    <source srcset="/content/data/3/05-home-slide.png?format=webp" type="image/webp">
+                                    <source srcset="/content/data/3/05-home-slide.png" type="image/png">
+                                    <img src="content/data/3/05-home-slide.png"/>
+                                </picture>
+
+                            </div>
+                            <div class="parallax-block__text">
+                                <h2 class="parallax-block__title h1-like">
+                                    Строительство домов
+                                </h2>
+                                <div class="parallax-block__subtitle h3-like">
+                                    Эстетичные и функциональные<br/> дома, снаружи и внутри
+                                </div>
+
+                                <a class="parallax-block__more"
+                                   href="https://salazckin.github.io/third/services/construction">узнать больше</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section section-projects" data-from="bottom">
+                    <div class="container">
+                        <h2 class="section__title h1-like">Проекты</h2>
+
+
+                        <div class="projects-stack">
+                            <div class="projects-stack__col projects-stack__col--lg">
+                                <a class="project-card project-card--black-text" data-aos="fade-up"
+                                   href="https://salazckin.github.io/third/catalog/123">
+                                    <div class="project-card__img-w">
+                                        <picture>
+                                            <source srcset="/content/data/6/Aivazovsky-001.png?format=webp"
+                                                    type="image/webp">
+                                            <source srcset="/content/data/6/Aivazovsky-001.png" type="image/png">
+                                            <img src="content/data/6/Aivazovsky-001.png"/>
+                                        </picture>
+
+                                    </div>
+                                    <div class="project-card__decor"></div>
+                                    <div class="project-card__text">
+                                        <div class="project-card__title">Квартира-студия</div>
+                                        <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="projects-stack__col">
+                                <a class="project-card project-card--sm project-card--black-text" data-aos="fade-up"
+                                   href="https://salazckin.github.io/third/catalog/123">
+                                    <div class="project-card__img-w">
+                                        <picture>
+                                            <source srcset="/content/data/7/Chertanovo-001.png?format=webp"
+                                                    type="image/webp">
+                                            <source srcset="/content/data/7/Chertanovo-001.png" type="image/png">
+                                            <img src="content/data/7/Chertanovo-001.png"/>
+                                        </picture>
+
+                                    </div>
+                                    <div class="project-card__decor"></div>
+                                    <div class="project-card__text">
+                                        <div class="project-card__title">Квартира-студия</div>
+                                        <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
+                                    </div>
+                                </a>
+                                <a class="project-card project-card--sm project-card--black-text" data-aos="fade-up"
+                                   href="https://salazckin.github.io/third/catalog/123">
+                                    <div class="project-card__img-w">
+                                        <picture>
+                                            <source srcset="/content/data/8/M-Zhukova-001.png?format=webp"
+                                                    type="image/webp">
+                                            <source srcset="/content/data/8/M-Zhukova-001.png" type="image/png">
+                                            <img src="content/data/8/M-Zhukova-001.png"/>
+                                        </picture>
+
+                                    </div>
+                                    <div class="project-card__decor"></div>
+                                    <div class="project-card__text">
+                                        <div class="project-card__title">Квартира-студия</div>
+                                        <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <div class="slider-projects slick">
+                            <div class="slider-projects__item">
+                                <a class="d-block" href="https://salazckin.github.io/third/catalog/123">
+                                    <picture>
+                                        <source srcset="/content/data/6/Aivazovsky-001.png?format=webp"
+                                                type="image/webp">
+                                        <source srcset="/content/data/6/Aivazovsky-001.png" type="image/png">
+                                        <img src="content/data/6/Aivazovsky-001.png"/>
+                                    </picture>
+
+                                </a>
+                            </div>
+                            <div class="slider-projects__item">
+                                <a class="d-block" href="https://salazckin.github.io/third/catalog/123">
+                                    <picture>
+                                        <source srcset="/content/data/7/Chertanovo-001.png?format=webp"
+                                                type="image/webp">
+                                        <source srcset="/content/data/7/Chertanovo-001.png" type="image/png">
+                                        <img src="content/data/7/Chertanovo-001.png"/>
+                                    </picture>
+
+                                </a>
+                            </div>
+                            <div class="slider-projects__item">
+                                <a class="d-block" href="https://salazckin.github.io/third/catalog/123">
+                                    <picture>
+                                        <source srcset="/content/data/8/M-Zhukova-001.png?format=webp"
+                                                type="image/webp">
+                                        <source srcset="/content/data/8/M-Zhukova-001.png" type="image/png">
+                                        <img src="content/data/8/M-Zhukova-001.png"/>
+                                    </picture>
+
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="projects-all text-center">
+                            <a class="btn projects-all__btn" href="https://salazckin.github.io/third/catalog">все
+                                проекты</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="section section-feedback" data-from="bottom">
+                    <div class="container">
+                        <h2 class="section__title h1-like">Заказать проект</h2>
+                        <form class="form" action="">
+                            <div class="form__field-group">
+                                <div class="form__field">
+                                    <input class="input-default" name="FullName" data-val="true" data-val-required
+                                           type="text" placeholder="Представьтесь, пожалуйста">
+                                </div>
+                                <div class="form__field">
+                                    <input class="input-default" name="Email" data-val="true" data-val-required
+                                           data-val-email type="email" placeholder="Ваш e-mail">
+                                </div>
+                                <div class="form__field">
+                                    <input class="input-default" name="Text" data-val="true" data-val-required
+                                           type="text" placeholder="Ваш комментарий">
+                                </div>
+                            </div>
+                            <button class="form__submit btn btn-status" type="submit">отправить</button>
+
+                        </form>
+
+                    </div>
+                    <footer class="footer">
+                        <div class="footer-top">
+                            <div class="footer-top__inner container">
+                                <div class="footer-row">
+                                    <div class="footer-row__col">
+                                        <ul class="footer-list">
+                                            <li>
+                                                <a rel="nofollow" class="group text-nowrap" href="tel:+7 495 111 22 33">
+                                                    <i class="icon-phone"></i>
+                                                    <span>+7 495 111 22 33</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a rel="nofollow" class="group" href="mailto:salazckin@gmail.ru">
+                                                    <i class="icon-email"></i>
+                                                    <span>salazckin@gmail.ru</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <div class="group">
+                                                    <i class="icon-map-point"></i>
+                                                    <span>Москва, ул. Дурова 29</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="footer-list">
+                                            <li>
+                                                <a class="group" href="https://www.instagram.com" target="_blank"
+                                                   rel="external" title="инстаграм">
+                                                    <i class="icon-instagram"></i>
+                                                    <span>Подписывайтесь на наш инстаграм!</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="footer-row__col">
+                                        <ul class="footer-list footer-list--sm">
+                                            <li>
+                                                <a href="index.html#">Дизайн и проектирование</a>
+                                            </li>
+                                            <li>
+                                                <a href="index.html#">Ремонт квартир и домов</a>
+                                            </li>
+                                            <li>
+                                                <a href="index.html#">Ремонт офисов</a>
+                                            </li>
+                                            <li>
+                                                <a href="index.html#">Строительство домов</a>
+                                            </li>
+                                            <li>
+                                                <a href="index.html#">Проекты</a>
+                                            </li>
+                                        </ul>
+                                        <ul class="footer-list footer-list--sm">
+                                            <li>
+                                                <a href="index.html#">Согласование перепланировок</a>
+                                            </li>
+                                            <li>
+                                                <a href="index.html#">Технический надзор</a>
+                                            </li>
+                                            <li>
+                                                <a href="index.html#">О компании</a>
+                                            </li>
+                                            <li>
+                                                <a href="index.html#">Контакты</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-bot">
+                            <div class="footer-bot__inner container">
+                                <div class="footer-bot__info">
+                                    <div class="footer-bot__copyright"></div>
+                                    <div class="footer-bot__dev">
+                                        <a href="http://www.salazckin.github.io" target="_blank" rel="external"
+                                           title="github">разработка сайта</a> — salazckin.github.io
+
+
+                                    </div>
+                                </div>
+                                <button class="footer-bot__scrolltop" type="button">
+                                    <i class="icon-up"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </footer>
+
+                </div>
+            </div>
+            <div class="home-nav">
+                <div class="home-nav__item is-active" data-to-section="0"></div>
+                <div class="home-nav__item" data-to-section="1"></div>
+                <div class="home-nav__item" data-to-section="2"></div>
+                <div class="home-nav__item" data-to-section="3"></div>
+                <div class="home-nav__item" data-to-section="4"></div>
+                <div class="home-nav__item" data-to-section="5"></div>
+                <div class="home-nav__item" data-to-section="6"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
+
