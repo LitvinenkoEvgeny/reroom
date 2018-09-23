@@ -22,9 +22,13 @@ def contacts(request):
     return render_to_response('main/contacts.html')
 
 
+def design(request):
+    return render_to_response('main/design.html')
+
+
 def home_repair(request):
     return render_to_response('main/home-repair.html')
 
 
-def design(request):
-    return render_to_response('main/design.html')
+def office_repair(request):
+    return render_to_response('main/office-repair.html')
