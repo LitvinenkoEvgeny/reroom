@@ -6,218 +6,228 @@
         {% include 'main/includes/header.html' %}
         {% include 'main/includes/menu.html' %}
 
-        <div class="p-projects-details">
-
-
-            <div class="pd-panel pd-panel--closed">
-                <div class="pd-panel-head">
-                    <a class="pd-panel-head__all" href="https://salazckin.github.io/third/catalog">
-                        <i class="icon-all-projects"></i>
-                        <span>все проекты</span>
-                    </a>
-                    <button class="pd-panel-head__info" type="button">
-                        <i class="icon-close"></i>
-                        <span>инфо</span>
-                    </button>
+        <div class="p-catalog">
+            <div class="page-head">
+                <div class="page-head__inner container">
+                    <h1 class="page-head__title">Проекты</h1>
+                    <div class="projects-filter">
+                        <a class="projects-filter__item projects-filter__item--current"
+                           href="https://salazckin.github.io/third/catalog">все</a>
+                        <span class="projects-filter__separ">/</span>
+                        <a class="projects-filter__item" href="https://salazckin.github.io/third/catalog/repair">Ремонт
+                            квартир и домов</a>
+                        <span class="projects-filter__separ">/</span>
+                        <a class="projects-filter__item" href="https://salazckin.github.io/third/catalog/offices">Ремонт
+                            офисов</a>
+                    </div>
                 </div>
-                <div class="pd-panel-body">
-                    <div class="pd-panel-body__inner">
-                        <div class="pd-panel-body__control">
-                            <a href="https://salazckin.github.io/third/catalog" title="Все проекты">
-                                <i class="icon-all-projects"></i>
+            </div>
+
+
+            <div class="block pb-sm">
+                <div class="container">
+
+
+                    <div class="projects-stack">
+                        <div class="projects-stack__col projects-stack__col--lg">
+                            <a class="project-card project-card--white-text" data-aos="fade-up"
+                               href="https://salazckin.github.io/third/catalog/123">
+                                <div class="project-card__img-w">
+                                    <picture>
+                                        <source srcset="{% static 'main/content/data/6/Aivazovsky-001.png' %}"
+                                                type="image/webp">
+                                        <source srcset="{% static 'main/content/data/6/Aivazovsky-001.png' %}" type="image/png">
+                                        <img src="{% static 'main/content/data/6/Aivazovsky-001.png' %}"
+                                             alt="Квартира на&#160;Красногорском бульваре"/>
+                                    </picture>
+
+                                </div>
+                                <div class="project-card__decor"></div>
+                                <div class="project-card__text">
+                                    <div class="project-card__title">Квартира-студия</div>
+                                    <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
+                                </div>
                             </a>
-                            <button data-pdslider-arr="next" type="button">
-                                <i class="icon-arrow-right"></i>
-                            </button>
-                            <button data-pdslider-arr="prev" type="button">
-                                <i class="icon-arrow-left"></i>
-                            </button>
                         </div>
-                        <h1 class="pd-panel-body__title h2-like">Квартира-студия</h1>
-                        <ul class="pd-panel-body__list">
-                            <li class="pd-row">
-                                <div class="pr-row__icon">
-                                    <i class="icon-date"></i>
-                                </div>
-                                <div class="pd-row__info">
-                                    <div class="pd-row__key">Дата</div>
-                                    <div class="pd-row__value">17.06.2017</div>
-                                </div>
-                            </li>
-                            <li class="pd-row">
-                                <div class="pr-row__icon">
-                                    <i class="icon-address"></i>
-                                </div>
-                                <div class="pd-row__info">
-                                    <div class="pd-row__key">Адрес</div>
-                                    <div class="pd-row__value">Москва, ул. Дурова 29</div>
-                                </div>
-                            </li>
-                            <li class="pd-row">
-                                <div class="pr-row__icon">
-                                    <i class="icon-architect"></i>
-                                </div>
-                                <div class="pd-row__info">
-                                    <div class="pd-row__key">Архитектор</div>
-                                    <div class="pd-row__value">Иван Иванов</div>
-                                </div>
-                            </li>
-                            <li class="pd-row">
-                                <div class="pr-row__icon">
-                                    <i class="icon-photographer"></i>
-                                </div>
-                                <div class="pd-row__info">
-                                    <div class="pd-row__key">Фотограф</div>
-                                    <div class="pd-row__value">Иван Иванов</div>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="pd-panel-body__gallery">
-                            <div class="fraction">
-                                <button class="fraction__arrow" data-pdslider-arr="prev" type="button">
-                                    <i class="icon-arrow-left"></i>
-                                </button>
+                        <div class="projects-stack__col">
+                            <a class="project-card project-card--sm project-card--black-text" data-aos="fade-up"
+                               href="https://salazckin.github.io/third/catalog/123">
+                                <div class="project-card__img-w">
+                                    <picture>
+                                        <source srcset="{% static 'main/content/data/6/Aivazovsky-001.png' %}"
+                                                type="image/webp">
+                                        <source srcset="{% static 'main/content/data/6/Aivazovsky-001.png' %}" type="image/png">
+                                        <img src="{% static 'main/content/data/6/Aivazovsky-001.png' %}"/>
+                                    </picture>
 
-                                <div class="fraction__info">
-                                    <div class="fraction__nums">
-                                        <span class="fraction__current">1</span>
-                                        <span class="fraction__separ">/</span>
-                                        <span class="fraction__max">9</span>
-                                    </div>
-                                    <div class="fraction__caption">фотогалерея</div>
                                 </div>
+                                <div class="project-card__decor"></div>
+                                <div class="project-card__text">
+                                    <div class="project-card__title">Квартира-студия</div>
+                                    <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
+                                </div>
+                            </a>
+                            <a class="project-card project-card--sm project-card--black-text" data-aos="fade-up"
+                               href="https://salazckin.github.io/third/catalog/123">
+                                <div class="project-card__img-w">
+                                    <picture>
+                                        <source srcset="{% static 'main/content/data/1/Spiridonovka-001.png' %}"
+                                                type="image/webp">
+                                        <source srcset="{% static 'main/content/data/1/Spiridonovka-001.png' %}" type="image/png">
+                                        <img src="{% static 'main/content/data/1/Spiridonovka-001.png' %}"/>
+                                    </picture>
 
-                                <button class="fraction__arrow" data-pdslider-arr="next" type="button">
-                                    <i class="icon-arrow-right"></i>
-                                </button>
-                            </div>
+                                </div>
+                                <div class="project-card__decor"></div>
+                                <div class="project-card__text">
+                                    <div class="project-card__title">Квартира-студия</div>
+                                    <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                </div>
-            </div>
 
 
-            <div class="pd-slider">
-                <div class="pd-slider__slide">
-                    <div class="slick-effect">
+                    <div class="projects-stack">
+                        <div class="projects-stack__col">
+                            <a class="project-card project-card--sm project-card--black-text" data-aos="fade-up"
+                               href="https://salazckin.github.io/third/catalog/123">
+                                <div class="project-card__img-w">
+                                    <picture>
+                                        <source srcset="{% static 'main/content/data/6/Aivazovsky-001.png' %}"
+                                                type="image/webp">
+                                        <source srcset="{% static 'main/content/data/6/Aivazovsky-001.png' %}" type="image/png">
+                                        <img src="{% static 'main/content/data/6/Aivazovsky-001.png' %}"/>
+                                    </picture>
 
+                                </div>
+                                <div class="project-card__decor"></div>
+                                <div class="project-card__text">
+                                    <div class="project-card__title">Квартира-студия</div>
+                                    <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
+                                </div>
+                            </a>
+                            <a class="project-card project-card--sm project-card--white-text" data-aos="fade-up"
+                               href="https://salazckin.github.io/third/catalog/123">
+                                <div class="project-card__img-w">
+                                    <picture>
+                                        <source srcset="{% static 'main/content/data/4/Profsouznaya-001.png' %}"
+                                                type="image/webp">
+                                        <source srcset="{% static 'main/content/data/4/Profsouznaya-001.png' %}" type="image/png">
+                                        <img src="{% static 'main/content/data/4/Profsouznaya-001.png' %}"/>
+                                    </picture>
 
-                        <img class="slick-effect__img" data-lazy="/content/data/9/Aivazovsky-001.png" alt=""/>
+                                </div>
+                                <div class="project-card__decor"></div>
+                                <div class="project-card__text">
+                                    <div class="project-card__title">Квартира-студия</div>
+                                    <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="projects-stack__col projects-stack__col--lg">
+                            <a class="project-card project-card--black-text" data-aos="fade-up"
+                               href="https://salazckin.github.io/third/catalog/123">
+                                <div class="project-card__img-w">
+                                    <picture>
+                                        <source srcset="{% static 'main/content/data/8/Chistoprudny-001.png' %}"
+                                                type="image/webp">
+                                        <source srcset="{% static 'main/content/data/8/Chistoprudny-001.png' %}" type="image/png">
+                                        <img src="{% static 'main/content/data/8/Chistoprudny-001.png' %}"/>
+                                    </picture>
+
+                                </div>
+                                <div class="project-card__decor"></div>
+                                <div class="project-card__text">
+                                    <div class="project-card__title">Квартира-студия</div>
+                                    <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="pd-slider__slide">
-                    <div class="slick-effect">
 
 
-                        <img class="slick-effect__img" data-lazy="/content/data/8/Aivazovsky-002.png" alt=""/>
+                    <div class="projects-stack">
+                        <div class="projects-stack__col projects-stack__col--lg">
+                            <a class="project-card project-card--black-text" data-aos="fade-up"
+                               href="https://salazckin.github.io/third/catalog/123">
+                                <div class="project-card__img-w">
+                                    <picture>
+                                        <source srcset="{% static 'main/content/data/7/Chertanovo-001.png' %}"
+                                                type="image/webp">
+                                        <source srcset="{% static 'main/content/data/7/Chertanovo-001.png' %}" type="image/png">
+                                        <img src="{% static 'main/content/data/7/Chertanovo-001.png' %}"/>
+                                    </picture>
+
+                                </div>
+                                <div class="project-card__decor"></div>
+                                <div class="project-card__text">
+                                    <div class="project-card__title">Квартира-студия</div>
+                                    <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="projects-stack__col">
+                            <a class="project-card project-card--sm project-card--black-text" data-aos="fade-up"
+                               href="https://salazckin.github.io/third/catalog/123">
+                                <div class="project-card__img-w">
+                                    <picture>
+                                        <source srcset="{% static 'main/content/data/8/M-Zhukova-001.png' %}"
+                                                type="image/webp">
+                                        <source srcset="{% static 'main/content/data/8/M-Zhukova-001.png' %}" type="image/png">
+                                        <img src="{% static 'main/content/data/8/M-Zhukova-001.png' %}"/>
+                                    </picture>
+
+                                </div>
+                                <div class="project-card__decor"></div>
+                                <div class="project-card__text">
+                                    <div class="project-card__title">Квартира-студия</div>
+                                    <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
+                                </div>
+                            </a>
+                            <a class="project-card project-card--sm project-card--black-text" data-aos="fade-up"
+                               href="https://salazckin.github.io/third/catalog/123">
+                                <div class="project-card__img-w">
+                                    <picture>
+                                        <source srcset="{% static 'main/content/data/4/Bibirevo-001.png' %}" type="image/webp">
+                                        <source srcset="{% static 'main/content/data/4/Bibirevo-001.png' %}" type="image/png">
+                                        <img src="{% static 'main/content/data/4/Bibirevo-001.png' %}"/>
+                                    </picture>
+
+                                </div>
+                                <div class="project-card__decor"></div>
+                                <div class="project-card__text">
+                                    <div class="project-card__title">Квартира-студия</div>
+                                    <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="pd-slider__slide">
-                    <div class="slick-effect">
 
 
-                        <img class="slick-effect__img" data-lazy="/content/data/8/Aivazovsky-003.png" alt=""/>
+                    <div class="projects-stack">
+                        <div class="projects-stack__col projects-stack__col--lg">
+                            <a class="project-card project-card--white-text" data-aos="fade-up"
+                               href="https://salazckin.github.io/third/catalog/123">
+                                <div class="project-card__img-w">
+                                    <picture>
+                                        <source srcset="{% static 'main/content/data/6/Aivazovsky-001.png' %}"
+                                                type="image/webp">
+                                        <source srcset="{% static 'main/content/data/6/Aivazovsky-001.png' %}" type="image/png">
+                                        <img src="{% static 'main/content/data/6/Aivazovsky-001.png' %}"/>
+                                    </picture>
+
+                                </div>
+                                <div class="project-card__decor"></div>
+                                <div class="project-card__text">
+                                    <div class="project-card__title">Квартира-студия</div>
+                                    <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="pd-slider__slide">
-                    <div class="slick-effect">
 
 
-                        <img class="slick-effect__img" data-lazy="/content/data/7/Aivazovsky-004.png" alt=""/>
-                    </div>
-                </div>
-                <div class="pd-slider__slide">
-                    <div class="slick-effect">
-
-
-                        <img class="slick-effect__img" data-lazy="/content/data/3/Aivazovsky-005.png" alt=""/>
-                    </div>
-                </div>
-                <div class="pd-slider__slide">
-                    <div class="slick-effect">
-
-
-                        <img class="slick-effect__img" data-lazy="/content/data/7/Aivazovsky-006.png" alt=""/>
-                    </div>
-                </div>
-                <div class="pd-slider__slide">
-                    <div class="slick-effect">
-
-
-                        <img class="slick-effect__img" data-lazy="/content/data/3/Aivazovsky-007.png" alt=""/>
-                    </div>
-                </div>
-                <div class="pd-slider__slide">
-                    <div class="slick-effect">
-
-
-                        <img class="slick-effect__img" data-lazy="/content/data/5/Aivazovsky-008.png" alt=""/>
-                    </div>
-                </div>
-                <div class="pd-slider__slide">
-                    <div class="slick-effect">
-
-
-                        <img class="slick-effect__img" data-lazy="/content/data/6/Aivazovsky-009.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="pd-m-controls">
-                <button type="button" data-pdslider-arr="prev">
-                    <i class="icon-arrow-left"></i>
-                </button>
-                <a href="https://salazckin.github.io/third/catalog">
-                    <i class="icon-all-projects"></i>
-                </a>
-                <button type="button" data-pdslider-arr="next">
-                    <i class="icon-arrow-right"></i>
-                </button>
-            </div>
-
-            <div class="pd-mcard">
-                <div class="pd-mcard__inner">
-
-                    <h1 class="pd-mcard__title h2-like">Квартира-студия</h1>
-                    <ul class="pd-mcard__list">
-                        <li class="pd-row">
-                            <div class="pr-row__icon">
-                                <i class="icon-date"></i>
-                            </div>
-                            <div class="pd-row__info">
-                                <div class="pd-row__key">Дата</div>
-                                <div class="pd-row__value">17.06.2017</div>
-                            </div>
-                        </li>
-                        <li class="pd-row">
-                            <div class="pr-row__icon">
-                                <i class="icon-address"></i>
-                            </div>
-                            <div class="pd-row__info">
-                                <div class="pd-row__key">Адрес</div>
-                                <div class="pd-row__value">Москва, ул. Дурова 29</div>
-                            </div>
-                        </li>
-                        <li class="pd-row">
-                            <div class="pr-row__icon">
-                                <i class="icon-architect"></i>
-                            </div>
-                            <div class="pd-row__info">
-                                <div class="pd-row__key">Архитектор</div>
-                                <div class="pd-row__value">Иван Иванов</div>
-                            </div>
-                        </li>
-                        <li class="pd-row">
-                            <div class="pr-row__icon">
-                                <i class="icon-photographer"></i>
-                            </div>
-                            <div class="pd-row__info">
-                                <div class="pd-row__key">Фотограф</div>
-                                <div class="pd-row__value">Иван Иванов</div>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
             </div>
 
@@ -230,18 +240,19 @@
                         <div class="footer-row__col">
                             <ul class="footer-list">
                                 <li>
-                                    <a rel="nofollow" class="group text-nowrap" href="tel:+7 495 222 11 33">
+                                    <a rel="nofollow" class="group text-nowrap" href="tel:+7 495 222 33 11">
                                         <i class="icon-phone"></i>
-                                        <span>+7 495 222 11 33</span>
+                                        <span>+7 495 222 33 11</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a rel="nofollow" class="group" href="mailto:alazckin@gmail.ru">
+                                    <a rel="nofollow" class="group" href="mailto:salazckin@gmail.ru">
                                         <i class="icon-email"></i>
-                                        <span>alazckin@gmail.ru</span>
+                                        <span>	salazckin@gmail.ru</span>
                                     </a>
                                 </li>
                                 <li>
+
                                     <div class="group">
                                         <i class="icon-map-point"></i>
                                         <span>Москва, ул. Дурова 29</span>
@@ -300,6 +311,7 @@
                         <div class="footer-bot__copyright"></div>
                         <div class="footer-bot__dev">
                             разработка сайта — salazckin.github.io
+
                         </div>
                     </div>
                     <button class="footer-bot__scrolltop" type="button">
