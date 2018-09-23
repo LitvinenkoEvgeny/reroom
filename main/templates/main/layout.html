@@ -1,6 +1,7 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-<html class=overflow-hidden lang="ru">
+<html class="{% block html-class %}{% endblock %}" lang="ru">
+
 <head prefix="og: http://ogp.me/ns#">
     <title></title>
     <meta charset="utf-8">
@@ -10,7 +11,8 @@
     <link rel="stylesheet" href="{% static 'main/css/screen.min.css' %}">
 
     <script data-pace-options='{ "elements": false,"ajax": false,"restartOnPushState": false,"restartOnRequestAfter": false }'
-            src="{% static 'main/js/pace.min.js' %}"></script>
+            src="{% static 'main/js/pace.min.js' %}" defer></script>
+
 
 </head>
 <body>
@@ -19,7 +21,7 @@
 
 {% endblock %}
 
-<script src="{% static 'main/js/bundle.min.js' %}" defer></script>
+<script src="{% static 'main/js/bundle.min.js' %}"></script>
 </body>
 </html>
 

@@ -1,17 +1,14 @@
 {% extends 'main/layout.html' %}
 {% load static %}
+
+
+{% block html-class %}
+    overflow-hidden
+{% endblock %}
+
 {% block body %}
     <div class="wrapper">
-        <header class="header">
-            <div class="header__inner container-fluid">
-                <!--div.header__logo: img(src="{% static 'main/media/img/logo.png' %}" alt="")-->
-                <div class="header__logo">
-                    <img src="{% static 'main/img/logo.svg' %}" width="70px">
-
-
-                </div>
-            </div>
-        </header>
+        {% include 'main/includes/logo.html' %}
         <div class="menu-panel">
             <div class="menu-panel__inner">
                 <a class="phone" href="tel:+7 495 111 22 33">
@@ -45,7 +42,7 @@
                         </a>
                     </li>
                     <li class="nav__item">
-                        <a class="nav__link" href="https://salazckin.github.io/third/about">
+                        <a class="nav__link" href="{% url 'main:about' %}">
                             О компании
                         </a>
                     </li>
@@ -64,19 +61,25 @@
                                 <a class="subnav__link" href="https://salazckin.github.io/third/services">В раздел</a>
                             </div>
                             <div class="subnav__item">
-                                <a class="subnav__link" href="https://salazckin.github.io/third/services/design">Дизайн и проектирование</a>
+                                <a class="subnav__link" href="https://salazckin.github.io/third/services/design">Дизайн
+                                    и проектирование</a>
                             </div>
                             <div class="subnav__item">
-                                <a class="subnav__link" href="https://salazckin.github.io/third/services/home-repairs">Ремонт квартир и домов</a>
+                                <a class="subnav__link" href="https://salazckin.github.io/third/services/home-repairs">Ремонт
+                                    квартир и домов</a>
                             </div>
                             <div class="subnav__item">
-                                <a class="subnav__link" href="https://salazckin.github.io/third/services/office-repairs">Ремонт офисов</a>
+                                <a class="subnav__link"
+                                   href="https://salazckin.github.io/third/services/office-repairs">Ремонт офисов</a>
                             </div>
                             <div class="subnav__item">
-                                <a class="subnav__link" href="https://salazckin.github.io/third/services/supevision-n-support">Согласование перепланировок и технадзор</a>
+                                <a class="subnav__link"
+                                   href="https://salazckin.github.io/third/services/supevision-n-support">Согласование
+                                    перепланировок и технадзор</a>
                             </div>
                             <div class="subnav__item">
-                                <a class="subnav__link" href="https://salazckin.github.io/third/services/construction">Строительство домов</a>
+                                <a class="subnav__link" href="https://salazckin.github.io/third/services/construction">Строительство
+                                    домов</a>
                             </div>
                         </div>
                     </li>
@@ -96,12 +99,15 @@
                     <div class="hero-panel__inner">
                         <ul class="hero-panel__list">
                             <li>
-                                <a class="project-card project-card--tile" href="https://salazckin.github.io/third/catalog/123">
+                                <a class="project-card project-card--tile"
+                                   href="https://salazckin.github.io/third/catalog/123">
                                     <div class="project-card__img-w">
                                         <picture>
-                                            <source srcset="{% static 'main//content/data/0/cafe-001.png' %}" type="image/webp">
-                                            <source srcset="{% static 'main//content/data/0/cafe-001.png' %}" type="image/png">
-                                            <img src="{% static 'main/content/data/0/cafe-001.png' %}" />
+                                            <source srcset="{% static 'main//content/data/0/cafe-001.png' %}"
+                                                    type="image/webp">
+                                            <source srcset="{% static 'main//content/data/0/cafe-001.png' %}"
+                                                    type="image/png">
+                                            <img src="{% static 'main/content/data/0/cafe-001.png' %}"/>
                                         </picture>
 
                                     </div>
@@ -119,12 +125,16 @@
                     <div class="hero-panel__inner">
                         <ul class="hero-panel__list">
                             <li>
-                                <a class="project-card project-card--tile" href="https://salazckin.github.io/third/catalog/123">
+                                <a class="project-card project-card--tile"
+                                   href="https://salazckin.github.io/third/catalog/123">
                                     <div class="project-card__img-w">
                                         <picture>
-                                            <source srcset="{% static 'main/content/data/5/Krasnogorsky-001.png' %}" type="image/webp">
-                                            <source srcset="{% static 'main/content/data/5/Krasnogorsky-001.png' %}" type="image/png">
-                                            <img src="{% static 'main/content/data/5/Krasnogorsky-001.png' %}" alt="Квартира на&#160;Красногорском бульваре" />
+                                            <source srcset="{% static 'main/content/data/5/Krasnogorsky-001.png' %}"
+                                                    type="image/webp">
+                                            <source srcset="{% static 'main/content/data/5/Krasnogorsky-001.png' %}"
+                                                    type="image/png">
+                                            <img src="{% static 'main/content/data/5/Krasnogorsky-001.png' %}"
+                                                 alt="Квартира на&#160;Красногорском бульваре"/>
                                         </picture>
 
                                     </div>
@@ -136,12 +146,15 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="project-card project-card--tile" href="https://salazckin.github.io/third/catalog/123">
+                                <a class="project-card project-card--tile"
+                                   href="https://salazckin.github.io/third/catalog/123">
                                     <div class="project-card__img-w">
                                         <picture>
-                                            <source srcset="{% static 'main/content/data/7/Novoyasen-001.png' %}" type="image/webp">
-                                            <source srcset="{% static 'main/content/data/7/Novoyasen-001.png' %}" type="image/png">
-                                            <img src="{% static 'main/content/data/7/Novoyasen-001.png' %}" />
+                                            <source srcset="{% static 'main/content/data/7/Novoyasen-001.png' %}"
+                                                    type="image/webp">
+                                            <source srcset="{% static 'main/content/data/7/Novoyasen-001.png' %}"
+                                                    type="image/png">
+                                            <img src="{% static 'main/content/data/7/Novoyasen-001.png' %}"/>
                                         </picture>
 
                                     </div>
@@ -153,12 +166,15 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="project-card project-card--tile" href="https://salazckin.github.io/third/catalog/123">
+                                <a class="project-card project-card--tile"
+                                   href="https://salazckin.github.io/third/catalog/123">
                                     <div class="project-card__img-w">
                                         <picture>
-                                            <source srcset="{% static 'main/content/data/1/Spiridonovka-001.png' %}" type="image/webp">
-                                            <source srcset="{% static 'main/content/data/1/Spiridonovka-001.png' %}" type="image/png">
-                                            <img src="{% static 'main/content/data/1/Spiridonovka-001.png' %}" />
+                                            <source srcset="{% static 'main/content/data/1/Spiridonovka-001.png' %}"
+                                                    type="image/webp">
+                                            <source srcset="{% static 'main/content/data/1/Spiridonovka-001.png' %}"
+                                                    type="image/png">
+                                            <img src="{% static 'main/content/data/1/Spiridonovka-001.png' %}"/>
                                         </picture>
 
                                     </div>
@@ -170,12 +186,15 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="project-card project-card--tile" href="https://salazckin.github.io/third/catalog/123">
+                                <a class="project-card project-card--tile"
+                                   href="https://salazckin.github.io/third/catalog/123">
                                     <div class="project-card__img-w">
                                         <picture>
-                                            <source srcset="{% static 'main/content/data/6/Aivazovsky-001.png' %}" type="image/webp">
-                                            <source srcset="{% static 'main/content/data/6/Aivazovsky-001.png' %}" type="image/png">
-                                            <img src="{% static 'main/content/data/6/Aivazovsky-001.png' %}" />
+                                            <source srcset="{% static 'main/content/data/6/Aivazovsky-001.png' %}"
+                                                    type="image/webp">
+                                            <source srcset="{% static 'main/content/data/6/Aivazovsky-001.png' %}"
+                                                    type="image/png">
+                                            <img src="{% static 'main/content/data/6/Aivazovsky-001.png' %}"/>
                                         </picture>
 
                                     </div>
@@ -196,7 +215,7 @@
                         <picture>
                             <source srcset="{% static 'main//content/data/3/01-home-slide.png' %}" type="image/webp">
                             <source srcset="{% static 'main//content/data/3/01-home-slide.png' %}" type="image/png">
-                            <img src="{% static 'main/content/data/3/01-home-slide.png' %}" />
+                            <img src="{% static 'main/content/data/3/01-home-slide.png' %}"/>
                         </picture>
 
                     </div>
@@ -204,7 +223,8 @@
                         <div class="row">
                             <div class="col-lg-9">
                                 <h1 class="hero-title">
-                                    Меняем любое пространство к&nbsp;лучшему: строим дома, делаем ремонт в квартирах и офисах
+                                    Меняем любое пространство к&nbsp;лучшему: строим дома, делаем ремонт в квартирах и
+                                    офисах
 
                                 </h1>
                             </div>
@@ -222,9 +242,11 @@
                         <div class="parallax-block">
                             <div class="parallax-block__img-w">
                                 <picture>
-                                    <source srcset="{% static 'main//content/data/5/02-home-slide.png' %}" type="image/webp">
-                                    <source srcset="{% static 'main//content/data/5/02-home-slide.png' %}" type="image/png">
-                                    <img src="{% static 'main/content/data/5/02-home-slide.png' %}" />
+                                    <source srcset="{% static 'main//content/data/5/02-home-slide.png' %}"
+                                            type="image/webp">
+                                    <source srcset="{% static 'main//content/data/5/02-home-slide.png' %}"
+                                            type="image/png">
+                                    <img src="{% static 'main/content/data/5/02-home-slide.png' %}"/>
                                 </picture>
 
                             </div>
@@ -233,10 +255,11 @@
                                     Дизайн<br/>и&nbsp;проектирование
                                 </h2>
                                 <div class="parallax-block__subtitle h3-like">
-                                    Продумываем до мелочей,<br /> бережём ваше время
+                                    Продумываем до мелочей,<br/> бережём ваше время
                                 </div>
 
-                                <a class="parallax-block__more " href="https://salazckin.github.io/third/services/design">узнать больше</a>
+                                <a class="parallax-block__more "
+                                   href="https://salazckin.github.io/third/services/design">узнать больше</a>
                             </div>
                         </div>
                     </div>
@@ -246,21 +269,24 @@
                         <div class="parallax-block">
                             <div class="parallax-block__img-w">
                                 <picture>
-                                    <source srcset="{% static 'main//content/data/9/03-home-slide.png' %}" type="image/webp">
-                                    <source srcset="{% static 'main//content/data/9/03-home-slide.png' %}" type="image/png">
-                                    <img src="{% static 'main/content/data/9/03-home-slide.png' %}" />
+                                    <source srcset="{% static 'main//content/data/9/03-home-slide.png' %}"
+                                            type="image/webp">
+                                    <source srcset="{% static 'main//content/data/9/03-home-slide.png' %}"
+                                            type="image/png">
+                                    <img src="{% static 'main/content/data/9/03-home-slide.png' %}"/>
                                 </picture>
 
                             </div>
                             <div class="parallax-block__text">
                                 <h2 class="parallax-block__title h1-like">
-                                    Ремонт квартир<br />и&nbsp;домов
+                                    Ремонт квартир<br/>и&nbsp;домов
                                 </h2>
                                 <div class="parallax-block__subtitle h3-like">
                                     Минимализм и&nbsp;лаконичность для&nbsp;комфортной жизни
                                 </div>
 
-                                <a class="parallax-block__more " href="https://salazckin.github.io/third/services/home-repairs">узнать больше</a>
+                                <a class="parallax-block__more "
+                                   href="https://salazckin.github.io/third/services/home-repairs">узнать больше</a>
                             </div>
                         </div>
                     </div>
@@ -270,9 +296,11 @@
                         <div class="parallax-block">
                             <div class="parallax-block__img-w">
                                 <picture>
-                                    <source srcset="{% static 'main//content/data/2/04-home-slide.png' %}" type="image/webp">
-                                    <source srcset="{% static 'main//content/data/2/04-home-slide.png' %}" type="image/png">
-                                    <img src="{% static 'main/content/data/2/04-home-slide.png' %}" />
+                                    <source srcset="{% static 'main//content/data/2/04-home-slide.png' %}"
+                                            type="image/webp">
+                                    <source srcset="{% static 'main//content/data/2/04-home-slide.png' %}"
+                                            type="image/png">
+                                    <img src="{% static 'main/content/data/2/04-home-slide.png' %}"/>
                                 </picture>
 
                             </div>
@@ -281,10 +309,11 @@
                                     Ремонт<br>офисов
                                 </h2>
                                 <div class="parallax-block__subtitle h3-like">
-                                    Создаём пространство,<br /> где удобно заниматься своим делом
+                                    Создаём пространство,<br/> где удобно заниматься своим делом
                                 </div>
 
-                                <a class="parallax-block__more" href="https://salazckin.github.io/third/services/office-repairs">узнать больше</a>
+                                <a class="parallax-block__more"
+                                   href="https://salazckin.github.io/third/services/office-repairs">узнать больше</a>
                             </div>
                         </div>
                     </div>
@@ -294,9 +323,11 @@
                         <div class="parallax-block">
                             <div class="parallax-block__img-w">
                                 <picture>
-                                    <source srcset="{% static 'main//content/data/3/05-home-slide.png' %}" type="image/webp">
-                                    <source srcset="{% static 'main//content/data/3/05-home-slide.png' %}" type="image/png">
-                                    <img src="{% static 'main/content/data/3/05-home-slide.png' %}" />
+                                    <source srcset="{% static 'main//content/data/3/05-home-slide.png' %}"
+                                            type="image/webp">
+                                    <source srcset="{% static 'main//content/data/3/05-home-slide.png' %}"
+                                            type="image/png">
+                                    <img src="{% static 'main/content/data/3/05-home-slide.png' %}"/>
                                 </picture>
 
                             </div>
@@ -308,7 +339,8 @@
                                     Эстетичные и функциональные<br/> дома, снаружи и внутри
                                 </div>
 
-                                <a class="parallax-block__more" href="https://salazckin.github.io/third/services/construction">узнать больше</a>
+                                <a class="parallax-block__more"
+                                   href="https://salazckin.github.io/third/services/construction">узнать больше</a>
                             </div>
                         </div>
                     </div>
@@ -321,12 +353,15 @@
 
                         <div class="projects-stack">
                             <div class="projects-stack__col projects-stack__col--lg">
-                                <a class="project-card project-card--black-text" data-aos="fade-up" href="https://salazckin.github.io/third/catalog/123">
+                                <a class="project-card project-card--black-text" data-aos="fade-up"
+                                   href="https://salazckin.github.io/third/catalog/123">
                                     <div class="project-card__img-w">
                                         <picture>
-                                            <source srcset="{% static 'main//content/data/6/Aivazovsky-001.png' %}" type="image/webp">
-                                            <source srcset="{% static 'main//content/data/6/Aivazovsky-001.png' %}" type="image/png">
-                                            <img src="{% static 'main/content/data/6/Aivazovsky-001.png' %}" />
+                                            <source srcset="{% static 'main//content/data/6/Aivazovsky-001.png' %}"
+                                                    type="image/webp">
+                                            <source srcset="{% static 'main//content/data/6/Aivazovsky-001.png' %}"
+                                                    type="image/png">
+                                            <img src="{% static 'main/content/data/6/Aivazovsky-001.png' %}"/>
                                         </picture>
 
                                     </div>
@@ -338,12 +373,15 @@
                                 </a>
                             </div>
                             <div class="projects-stack__col">
-                                <a class="project-card project-card--sm project-card--black-text" data-aos="fade-up" href="https://salazckin.github.io/third/catalog/123">
+                                <a class="project-card project-card--sm project-card--black-text" data-aos="fade-up"
+                                   href="https://salazckin.github.io/third/catalog/123">
                                     <div class="project-card__img-w">
                                         <picture>
-                                            <source srcset="{% static 'main//content/data/7/Chertanovo-001.png' %}" type="image/webp">
-                                            <source srcset="{% static 'main//content/data/7/Chertanovo-001.png' %}" type="image/png">
-                                            <img src="{% static 'main/content/data/7/Chertanovo-001.png' %}" />
+                                            <source srcset="{% static 'main//content/data/7/Chertanovo-001.png' %}"
+                                                    type="image/webp">
+                                            <source srcset="{% static 'main//content/data/7/Chertanovo-001.png' %}"
+                                                    type="image/png">
+                                            <img src="{% static 'main/content/data/7/Chertanovo-001.png' %}"/>
                                         </picture>
 
                                     </div>
@@ -353,12 +391,15 @@
                                         <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
                                     </div>
                                 </a>
-                                <a class="project-card project-card--sm project-card--black-text" data-aos="fade-up" href="https://salazckin.github.io/third/catalog/123">
+                                <a class="project-card project-card--sm project-card--black-text" data-aos="fade-up"
+                                   href="https://salazckin.github.io/third/catalog/123">
                                     <div class="project-card__img-w">
                                         <picture>
-                                            <source srcset="{% static 'main//content/data/8/M-Zhukova-001.png' %}" type="image/webp">
-                                            <source srcset="{% static 'main//content/data/8/M-Zhukova-001.png' %}" type="image/png">
-                                            <img src="{% static 'main/content/data/8/M-Zhukova-001.png' %}" />
+                                            <source srcset="{% static 'main//content/data/8/M-Zhukova-001.png' %}"
+                                                    type="image/webp">
+                                            <source srcset="{% static 'main//content/data/8/M-Zhukova-001.png' %}"
+                                                    type="image/png">
+                                            <img src="{% static 'main/content/data/8/M-Zhukova-001.png' %}"/>
                                         </picture>
 
                                     </div>
@@ -372,14 +413,15 @@
                         </div>
 
 
-
                         <div class="slider-projects slick">
                             <div class="slider-projects__item">
                                 <a class="d-block" href="https://salazckin.github.io/third/catalog/123">
                                     <picture>
-                                        <source srcset="{% static 'main//content/data/6/Aivazovsky-001.png' %}" type="image/webp">
-                                        <source srcset="{% static 'main//content/data/6/Aivazovsky-001.png' %}" type="image/png">
-                                        <img src="{% static 'main/content/data/6/Aivazovsky-001.png' %}" />
+                                        <source srcset="{% static 'main//content/data/6/Aivazovsky-001.png' %}"
+                                                type="image/webp">
+                                        <source srcset="{% static 'main//content/data/6/Aivazovsky-001.png' %}"
+                                                type="image/png">
+                                        <img src="{% static 'main/content/data/6/Aivazovsky-001.png' %}"/>
                                     </picture>
 
                                 </a>
@@ -387,9 +429,11 @@
                             <div class="slider-projects__item">
                                 <a class="d-block" href="https://salazckin.github.io/third/catalog/123">
                                     <picture>
-                                        <source srcset="{% static 'main//content/data/7/Chertanovo-001.png' %}" type="image/webp">
-                                        <source srcset="{% static 'main//content/data/7/Chertanovo-001.png' %}" type="image/png">
-                                        <img src="{% static 'main/content/data/7/Chertanovo-001.png' %}" />
+                                        <source srcset="{% static 'main//content/data/7/Chertanovo-001.png' %}"
+                                                type="image/webp">
+                                        <source srcset="{% static 'main//content/data/7/Chertanovo-001.png' %}"
+                                                type="image/png">
+                                        <img src="{% static 'main/content/data/7/Chertanovo-001.png' %}"/>
                                     </picture>
 
                                 </a>
@@ -397,9 +441,11 @@
                             <div class="slider-projects__item">
                                 <a class="d-block" href="https://salazckin.github.io/third/catalog/123">
                                     <picture>
-                                        <source srcset="{% static 'main//content/data/8/M-Zhukova-001.png' %}" type="image/webp">
-                                        <source srcset="{% static 'main//content/data/8/M-Zhukova-001.png' %}" type="image/png">
-                                        <img src="{% static 'main/content/data/8/M-Zhukova-001.png' %}" />
+                                        <source srcset="{% static 'main//content/data/8/M-Zhukova-001.png' %}"
+                                                type="image/webp">
+                                        <source srcset="{% static 'main//content/data/8/M-Zhukova-001.png' %}"
+                                                type="image/png">
+                                        <img src="{% static 'main/content/data/8/M-Zhukova-001.png' %}"/>
                                     </picture>
 
                                 </a>
@@ -407,7 +453,8 @@
                         </div>
 
                         <div class="projects-all text-center">
-                            <a class="btn projects-all__btn" href="https://salazckin.github.io/third/catalog">все проекты</a>
+                            <a class="btn projects-all__btn" href="https://salazckin.github.io/third/catalog">все
+                                проекты</a>
                         </div>
 
                     </div>
@@ -418,13 +465,16 @@
                         <form class="form" action="">
                             <div class="form__field-group">
                                 <div class="form__field">
-                                    <input class="input-default" name="FullName" data-val="true" data-val-required type="text" placeholder="Представьтесь, пожалуйста">
+                                    <input class="input-default" name="FullName" data-val="true" data-val-required
+                                           type="text" placeholder="Представьтесь, пожалуйста">
                                 </div>
                                 <div class="form__field">
-                                    <input class="input-default" name="Email" data-val="true" data-val-required data-val-email type="email" placeholder="Ваш e-mail">
+                                    <input class="input-default" name="Email" data-val="true" data-val-required
+                                           data-val-email type="email" placeholder="Ваш e-mail">
                                 </div>
                                 <div class="form__field">
-                                    <input class="input-default" name="Text" data-val="true" data-val-required type="text" placeholder="Ваш комментарий">
+                                    <input class="input-default" name="Text" data-val="true" data-val-required
+                                           type="text" placeholder="Ваш комментарий">
                                 </div>
                             </div>
                             <button class="form__submit btn btn-status" type="submit">отправить</button>
@@ -459,7 +509,8 @@
                                         </ul>
                                         <ul class="footer-list">
                                             <li>
-                                                <a class="group" href="https://www.instagram.com" target="_blank" rel="external" title="инстаграм">
+                                                <a class="group" href="https://www.instagram.com" target="_blank"
+                                                   rel="external" title="инстаграм">
                                                     <i class="icon-instagram"></i>
                                                     <span>Подписывайтесь на наш инстаграм!</span>
                                                 </a>
@@ -507,7 +558,8 @@
                                 <div class="footer-bot__info">
                                     <div class="footer-bot__copyright"></div>
                                     <div class="footer-bot__dev">
-                                        <a href="http://www.salazckin.github.io" target="_blank" rel="external" title="github">разработка сайта</a> — 		salazckin.github.io
+                                        <a href="http://www.salazckin.github.io" target="_blank" rel="external"
+                                           title="github">разработка сайта</a> — salazckin.github.io
 
 
                                     </div>
