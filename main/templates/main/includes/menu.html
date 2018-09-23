@@ -1,0 +1,84 @@
+<div class="menu-panel">
+    <div class="menu-panel__inner">
+        <a class="phone" href="tel:+7 495 111 22 33">
+            <div class="phone__inner">
+                <i class="icon-phone mr-2"></i>
+                <span>+7 495 111 22 33</span>
+            </div>
+        </a>
+        <button class="menu" id="menu">
+            <div class="menu__icon">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="menu__text">
+                <div>MENU</div>
+            </div>
+        </button>
+    </div>
+</div>
+
+<nav class="navigation">
+    <div class="navigation__inner" id="scroll-container">
+        <ul class="nav">
+            <li class="nav__item current">
+                <a class="nav__link" href="{% url 'main:index' %}">
+                    Главная
+                </a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__link" href="{% url 'main:about' %}">
+                    О компании
+                </a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__link" href="{% url 'main:catalog' %}">
+                    Проекты
+                </a>
+            </li>
+            <li class="nav__item nav__item--has-subnav">
+					<span class="nav__link">
+						Услуги
+						<span class="nav__status"></span>
+					</span>
+                <div class="subnav">
+                    <div class="subnav__item">
+                        <a class="subnav__link" href="https://salazckin.github.io/third/services">В раздел</a>
+                    </div>
+                    <div class="subnav__item">
+                        <a class="subnav__link" href="https://salazckin.github.io/third/services/design">Дизайн
+                            и проектирование</a>
+                    </div>
+                    <div class="subnav__item">
+                        <a class="subnav__link" href="https://salazckin.github.io/third/services/home-repairs">Ремонт
+                            квартир и домов</a>
+                    </div>
+                    <div class="subnav__item">
+                        <a class="subnav__link"
+                           href="https://salazckin.github.io/third/services/office-repairs">Ремонт офисов</a>
+                    </div>
+                    <div class="subnav__item">
+                        <a class="subnav__link"
+                           href="https://salazckin.github.io/third/services/supevision-n-support">Согласование
+                            перепланировок и технадзор</a>
+                    </div>
+                    <div class="subnav__item">
+                        <a class="subnav__link" href="https://salazckin.github.io/third/services/construction">Строительство
+                            домов</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav__item">
+                <a class="nav__link" href="https://salazckin.github.io/third/contacts">
+                    Контакты
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
