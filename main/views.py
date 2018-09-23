@@ -8,3 +8,7 @@ def index(request):
 
 def about(request):
     return render_to_response('main/about.html')
+
+
+def catalog(request):
+    return render_to_response('main/catalog.html')
