@@ -1,0 +1,113 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+
+{% block body %}
+    <div class="wrapper">
+        {% include 'main/includes/header.html' %}
+        {% include 'main/includes/menu.html' %}
+
+        <div class="p-services">
+            <div class="page-head">
+                <div class="page-head__inner container">
+                    <h1 class="page-head__title">Услуги по дизайну, ремонту и отделке</h1>
+                </div>
+            </div>
+            <div class="block bg-white">
+                <div class="container-md mb-md">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>Предлагаем полный спектр ремонтно-строительных услуг, чтобы вы&nbsp;могли насладиться
+                                качеством и&nbsp;комфортом, отвечающим всем правилам безопасности. Все процессы
+                                строительства и&nbsp;ремонта, контролируются одним из&nbsp;главных инженеров компании.
+                                Все сотрудники компании, имеют высокую квалификацию и&nbsp;большой опыт в&nbsp;строительной
+                                сфере. </p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>В&nbsp;штате компании, есть как универсальные мастера, так и&nbsp;мастера узкого профиля.
+                                Все сложные работы, требующие профильных знаний (например, сантехнические или
+                                электромонтажные работы), выполняются грамотными специалистами, имеющими все необходимые
+                                допуски. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <ul class="all-services">
+                        <li class="all-services__item" data-aos="fade-up">
+                            <a class="service-link" href="https://salazckin.github.io/third/services/design">
+                                <div class="service-link__img-w">
+                                    <picture>
+                                        <source srcset="{% static 'main/content/data/7/design.jpg'  %}" type="image/webp">
+                                        <source srcset="{% static 'main/content/data/7/design.jpg'  %}" type="image/jpeg">
+                                        <img src="{% static 'main/content/data/7/design.jpg'  %}" alt="Дизайн и проектирование"/>
+                                    </picture>
+
+                                </div>
+                                <div class="service-link__name h3-like">Дизайн и проектирование</div>
+                            </a>
+                        </li>
+                        <li class="all-services__item" data-aos="fade-up">
+                            <a class="service-link" href="https://salazckin.github.io/third/services/home-repairs">
+                                <div class="service-link__img-w">
+                                    <picture>
+                                        <source srcset="{% static 'main/content/data/0/repair-house.jpg'  %}" type="image/webp">
+                                        <source srcset="{% static 'main/content/data/0/repair-house.jpg'  %}" type="image/jpeg">
+                                        <img src="{% static 'main/content/data/0/repair-house.jpg'  %}" alt="ремонт квартир и домов"/>
+                                    </picture>
+
+                                </div>
+                                <div class="service-link__name h3-like">Ремонт квартир и домов</div>
+                            </a>
+                        </li>
+                        <li class="all-services__item" data-aos="fade-up">
+                            <a class="service-link" href="https://salazckin.github.io/third/services/office-repairs">
+                                <div class="service-link__img-w">
+                                    <picture>
+                                        <source srcset="{% static 'main/content/data/5/repair-office.jpg'  %}"
+                                                type="image/webp">
+                                        <source srcset="{% static 'main/content/data/5/repair-office.jpg'  %}" type="image/jpeg">
+                                        <img src="{% static 'main/content/data/5/repair-office.jpg'  %}" alt="Ремонт офисов"/>
+                                    </picture>
+
+                                </div>
+                                <div class="service-link__name h3-like">Ремонт офисов</div>
+                            </a>
+                        </li>
+                        <li class="all-services__item" data-aos="fade-up">
+                            <a class="service-link"
+                               href="https://salazckin.github.io/third/services/supevision-n-support">
+                                <div class="service-link__img-w">
+                                    <picture>
+                                        <source srcset="{% static 'main/content/data/9/supervision.jpg'  %}" type="image/webp">
+                                        <source srcset="{% static 'main/content/data/9/supervision.jpg'  %}" type="image/jpeg">
+                                        <img src="{% static 'main/content/data/9/supervision.jpg'  %}"
+                                             alt="Согласование перепланировок и технадзор"/>
+                                    </picture>
+
+                                </div>
+                                <div class="service-link__name h3-like">Согласование перепланировок и технадзор</div>
+                            </a>
+                        </li>
+                        <li class="all-services__item" data-aos="fade-up">
+                            <a class="service-link" href="https://salazckin.github.io/third/services/construction">
+                                <div class="service-link__img-w">
+                                    <picture>
+                                        <source srcset="{% static 'main/content/data/0/house-build.jpg'  %}" type="image/webp">
+                                        <source srcset="{% static 'main/content/data/0/house-build.jpg'  %}" type="image/jpeg">
+                                        <img src="{% static 'main/content/data/0/house-build.jpg'  %}" alt="Строительство домов"/>
+                                    </picture>
+
+                                </div>
+                                <div class="service-link__name h3-like">Строительство домов</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        {% include 'main/includes/footer.html' %}
+    </div>
+
+{% endblock %}
