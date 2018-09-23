@@ -24,3 +24,7 @@ def contacts(request):
 
 def home_repair(request):
     return render_to_response('main/home-repair.html')
+
+
+def design(request):
+    return render_to_response('main/design.html')
