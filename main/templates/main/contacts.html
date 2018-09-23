@@ -1,0 +1,84 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block body %}
+
+    <div class="wrapper">
+        {% include 'main/includes/header.html' %}
+        {% include 'main/includes/menu.html' %}
+
+        <div class="p-contacts">
+            <div class="page-head">
+                <div class="page-head__inner container">
+                    <h1 class="page-head__title">Контакты</h1>
+                </div>
+            </div>
+            <div class="block bg-white pb-sm">
+                <div class="contacts-grid container-md mb-md">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>Название компании
+                                <br> salazckin.github.io
+                                <br>
+                            </p>
+                            <p>Адрес
+                                <br> Москва, ул. Дурова 29
+
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>
+                            <div>Телефон</div>
+                            <a href="tel:+7 495 222 33 11">+7 495 222 33 11</a>
+                            </p>
+                            <p>
+                            <div>Время работы</div>
+                            <div>Пн-Вс: с 9.00 до 20.00</div>
+                            </p>
+                            <p>
+                            <div>E-mail</div>
+                            <a href="mailto:salazckin@gmail.ru">salazckin@gmail.ru</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="map" id="map"></div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="container-md mb-md">
+                    <h2 class="text-center mb-lg">НАПИСАТЬ СООБЩЕНИЕ</h2>
+                    <form class="form" action="/feedback">
+                        <div class="form__field-group">
+                            <div class="form__field">
+                                <input class="input-default" name="FullName" data-val="true" data-val-required
+                                       type="text" placeholder="Представьтесь, пожалуйста">
+                            </div>
+                            <div class="form__field">
+                                <input class="input-default" name="Email" data-val="true" data-val-required
+                                       data-val-email type="email" placeholder="Ваш e-mail">
+                            </div>
+                            <div class="form__field">
+                                <input class="input-default" name="Text" data-val="true" data-val-required type="text"
+                                       placeholder="Ваш комментарий">
+                            </div>
+                        </div>
+                        <button class="form__submit btn btn-status" type="submit">отправить</button>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+
+        {% include 'main/includes/footer.html' %}
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?language=ru&key=AIzaSyAp8fJIR1ICTOzqhcKjWLR6Yl8h3U25OoY"></script>
+
+
+{% endblock %}
+
+

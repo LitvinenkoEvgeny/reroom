@@ -13,5 +13,10 @@ def about(request):
 def catalog(request):
     return render_to_response('main/catalog.html')
 
+
 def services(request):
     return render_to_response('main/services.html')
+
+
+def contacts(request):
+    return render_to_response('main/contacts.html')
