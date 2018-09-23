@@ -22,9 +22,9 @@
                                    href="https://salazckin.github.io/third/catalog/123">
                                     <div class="project-card__img-w">
                                         <picture>
-                                            <source srcset="{% static 'main//content/data/0/cafe-001.png' %}"
+                                            <source srcset="{% static 'main/content/data/0/cafe-001.png' %}"
                                                     type="image/webp">
-                                            <source srcset="{% static 'main//content/data/0/cafe-001.png' %}"
+                                            <source srcset="{% static 'main/content/data/0/cafe-001.png' %}"
                                                     type="image/png">
                                             <img src="{% static 'main/content/data/0/cafe-001.png' %}"/>
                                         </picture>
@@ -132,8 +132,8 @@
                 <div class="section section-hero section--active" data-nav-color="#ffffff">
                     <div class="section-hero__bg">
                         <picture>
-                            <source srcset="{% static 'main//content/data/3/01-home-slide.png' %}" type="image/webp">
-                            <source srcset="{% static 'main//content/data/3/01-home-slide.png' %}" type="image/png">
+                            <source srcset="{% static 'main/content/data/3/01-home-slide.png' %}" type="image/webp">
+                            <source srcset="{% static 'main/content/data/3/01-home-slide.png' %}" type="image/png">
                             <img src="{% static 'main/content/data/3/01-home-slide.png' %}"/>
                         </picture>
 
@@ -142,14 +142,14 @@
                         <div class="row">
                             <div class="col-lg-9">
                                 <h1 class="hero-title">
-                                    {{ index_page.first_heading }}
+                                    {{ index_page.first_heading | safe }}
                                 </h1>
                             </div>
                         </div>
                     </div>
                     <button class="scroll-down" type="button">
                         <div class="scroll-down__caption">
-                            {{ index_page.down_text }}
+                            {{ index_page.down_text | safe }}
                         </div>
                         <div class="scroll-down__line"></div>
                     </button>
@@ -159,9 +159,9 @@
                         <div class="parallax-block">
                             <div class="parallax-block__img-w">
                                 <picture>
-                                    <source srcset="{% static 'main//content/data/5/02-home-slide.png' %}"
+                                    <source srcset="{% static 'main/content/data/5/02-home-slide.png' %}"
                                             type="image/webp">
-                                    <source srcset="{% static 'main//content/data/5/02-home-slide.png' %}"
+                                    <source srcset="{% static 'main/content/data/5/02-home-slide.png' %}"
                                             type="image/png">
                                     <img src="{% static 'main/content/data/5/02-home-slide.png' %}"/>
                                 </picture>
@@ -169,10 +169,10 @@
                             </div>
                             <div class="parallax-block__text">
                                 <h2 class="parallax-block__title h1-like">
-                                    {{ index_page.second_screen_heading }}
+                                    {{ index_page.second_screen_heading | safe }}
                                 </h2>
                                 <div class="parallax-block__subtitle h3-like">
-                                    {{ index_page.second_screen_descr }}
+                                    {{ index_page.second_screen_descr | safe }}
                                 </div>
 
                                 <a class="parallax-block__more "
@@ -186,9 +186,9 @@
                         <div class="parallax-block">
                             <div class="parallax-block__img-w">
                                 <picture>
-                                    <source srcset="{% static 'main//content/data/9/03-home-slide.png' %}"
+                                    <source srcset="{% static 'main/content/data/9/03-home-slide.png' %}"
                                             type="image/webp">
-                                    <source srcset="{% static 'main//content/data/9/03-home-slide.png' %}"
+                                    <source srcset="{% static 'main/content/data/9/03-home-slide.png' %}"
                                             type="image/png">
                                     <img src="{% static 'main/content/data/9/03-home-slide.png' %}"/>
                                 </picture>
@@ -196,10 +196,10 @@
                             </div>
                             <div class="parallax-block__text">
                                 <h2 class="parallax-block__title h1-like">
-                                    {{ index_page.third_screen_heading }}
+                                    {{ index_page.third_screen_heading | safe }}
                                 </h2>
                                 <div class="parallax-block__subtitle h3-like">
-                                    {{ index_page.third_screen_descr }}
+                                    {{ index_page.third_screen_descr | safe }}
                                 </div>
 
                                 <a class="parallax-block__more "
@@ -213,9 +213,9 @@
                         <div class="parallax-block">
                             <div class="parallax-block__img-w">
                                 <picture>
-                                    <source srcset="{% static 'main//content/data/2/04-home-slide.png' %}"
+                                    <source srcset="{% static 'main/content/data/2/04-home-slide.png' %}"
                                             type="image/webp">
-                                    <source srcset="{% static 'main//content/data/2/04-home-slide.png' %}"
+                                    <source srcset="{% static 'main/content/data/2/04-home-slide.png' %}"
                                             type="image/png">
                                     <img src="{% static 'main/content/data/2/04-home-slide.png' %}"/>
                                 </picture>
@@ -223,11 +223,11 @@
                             </div>
                             <div class="parallax-block__text">
                                 <h2 class="parallax-block__title h1-like">
-                                    {{ index_page.fourth_screen_heading }}
+                                    {{ index_page.fourth_screen_heading | safe }}
                                     <br>
                                 </h2>
                                 <div class="parallax-block__subtitle h3-like">
-                                    {{ index_page.fourth_screen_descr }}
+                                    {{ index_page.fourth_screen_descr | safe }}
                                 </div>
 
                                 <a class="parallax-block__more"
@@ -241,9 +241,9 @@
                         <div class="parallax-block">
                             <div class="parallax-block__img-w">
                                 <picture>
-                                    <source srcset="{% static 'main//content/data/3/05-home-slide.png' %}"
+                                    <source srcset="{% static 'main/content/data/3/05-home-slide.png' %}"
                                             type="image/webp">
-                                    <source srcset="{% static 'main//content/data/3/05-home-slide.png' %}"
+                                    <source srcset="{% static 'main/content/data/3/05-home-slide.png' %}"
                                             type="image/png">
                                     <img src="{% static 'main/content/data/3/05-home-slide.png' %}"/>
                                 </picture>
@@ -251,10 +251,10 @@
                             </div>
                             <div class="parallax-block__text">
                                 <h2 class="parallax-block__title h1-like">
-                                    {{ index_page.fifth_screen_heading }}
+                                    {{ index_page.fifth_screen_heading | safe }}
                                 </h2>
                                 <div class="parallax-block__subtitle h3-like">
-                                    {{ index_page.fifth_screen_descr }}
+                                    {{ index_page.fifth_screen_descr | safe }}
                                 </div>
 
                                 <a class="parallax-block__more"
@@ -275,9 +275,9 @@
                                    href="https://salazckin.github.io/third/catalog/123">
                                     <div class="project-card__img-w">
                                         <picture>
-                                            <source srcset="{% static 'main//content/data/6/Aivazovsky-001.png' %}"
+                                            <source srcset="{% static 'main/content/data/6/Aivazovsky-001.png' %}"
                                                     type="image/webp">
-                                            <source srcset="{% static 'main//content/data/6/Aivazovsky-001.png' %}"
+                                            <source srcset="{% static 'main/content/data/6/Aivazovsky-001.png' %}"
                                                     type="image/png">
                                             <img src="{% static 'main/content/data/6/Aivazovsky-001.png' %}"/>
                                         </picture>
@@ -295,9 +295,9 @@
                                    href="https://salazckin.github.io/third/catalog/123">
                                     <div class="project-card__img-w">
                                         <picture>
-                                            <source srcset="{% static 'main//content/data/7/Chertanovo-001.png' %}"
+                                            <source srcset="{% static 'main/content/data/7/Chertanovo-001.png' %}"
                                                     type="image/webp">
-                                            <source srcset="{% static 'main//content/data/7/Chertanovo-001.png' %}"
+                                            <source srcset="{% static 'main/content/data/7/Chertanovo-001.png' %}"
                                                     type="image/png">
                                             <img src="{% static 'main/content/data/7/Chertanovo-001.png' %}"/>
                                         </picture>
@@ -313,9 +313,9 @@
                                    href="https://salazckin.github.io/third/catalog/123">
                                     <div class="project-card__img-w">
                                         <picture>
-                                            <source srcset="{% static 'main//content/data/8/M-Zhukova-001.png' %}"
+                                            <source srcset="{% static 'main/content/data/8/M-Zhukova-001.png' %}"
                                                     type="image/webp">
-                                            <source srcset="{% static 'main//content/data/8/M-Zhukova-001.png' %}"
+                                            <source srcset="{% static 'main/content/data/8/M-Zhukova-001.png' %}"
                                                     type="image/png">
                                             <img src="{% static 'main/content/data/8/M-Zhukova-001.png' %}"/>
                                         </picture>
@@ -335,9 +335,9 @@
                             <div class="slider-projects__item">
                                 <a class="d-block" href="https://salazckin.github.io/third/catalog/123">
                                     <picture>
-                                        <source srcset="{% static 'main//content/data/6/Aivazovsky-001.png' %}"
+                                        <source srcset="{% static 'main/content/data/6/Aivazovsky-001.png' %}"
                                                 type="image/webp">
-                                        <source srcset="{% static 'main//content/data/6/Aivazovsky-001.png' %}"
+                                        <source srcset="{% static 'main/content/data/6/Aivazovsky-001.png' %}"
                                                 type="image/png">
                                         <img src="{% static 'main/content/data/6/Aivazovsky-001.png' %}"/>
                                     </picture>
@@ -347,9 +347,9 @@
                             <div class="slider-projects__item">
                                 <a class="d-block" href="https://salazckin.github.io/third/catalog/123">
                                     <picture>
-                                        <source srcset="{% static 'main//content/data/7/Chertanovo-001.png' %}"
+                                        <source srcset="{% static 'main/content/data/7/Chertanovo-001.png' %}"
                                                 type="image/webp">
-                                        <source srcset="{% static 'main//content/data/7/Chertanovo-001.png' %}"
+                                        <source srcset="{% static 'main/content/data/7/Chertanovo-001.png' %}"
                                                 type="image/png">
                                         <img src="{% static 'main/content/data/7/Chertanovo-001.png' %}"/>
                                     </picture>
@@ -359,9 +359,9 @@
                             <div class="slider-projects__item">
                                 <a class="d-block" href="https://salazckin.github.io/third/catalog/123">
                                     <picture>
-                                        <source srcset="{% static 'main//content/data/8/M-Zhukova-001.png' %}"
+                                        <source srcset="{% static 'main/content/data/8/M-Zhukova-001.png' %}"
                                                 type="image/webp">
-                                        <source srcset="{% static 'main//content/data/8/M-Zhukova-001.png' %}"
+                                        <source srcset="{% static 'main/content/data/8/M-Zhukova-001.png' %}"
                                                 type="image/png">
                                         <img src="{% static 'main/content/data/8/M-Zhukova-001.png' %}"/>
                                     </picture>

@@ -5,7 +5,7 @@ from .models import IndexPage
 # Create your views here.
 def index(request):
     context = {
-        'index_page': IndexPage.objects.get(pk=1)
+        'index_page': IndexPage.objects.all().first()
     }
     return render_to_response('main/index.html', context=context)
 
