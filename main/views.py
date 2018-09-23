@@ -20,3 +20,7 @@ def services(request):
 
 def contacts(request):
     return render_to_response('main/contacts.html')
+
+
+def home_repair(request):
+    return render_to_response('main/home-repair.html')
