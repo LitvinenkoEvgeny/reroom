@@ -1,9 +1,9 @@
 <div class="menu-panel">
     <div class="menu-panel__inner">
-        <a class="phone" href="tel:+7 495 111 22 33">
+        <a class="phone" href="tel:{{ index_page.contact_info }}">
             <div class="phone__inner">
                 <i class="icon-phone mr-2"></i>
-                <span>+7 495 111 22 33</span>
+                <span>{{ index_page.contact_info }}</span>
             </div>
         </a>
         <button class="menu" id="menu">
@@ -62,11 +62,6 @@
                     <div class="subnav__item">
                         <a class="subnav__link"
                            href="{% url 'main:office-repair' %}">Ремонт офисов</a>
-                    </div>
-                    <div class="subnav__item">
-                        <a class="subnav__link"
-                           href="https://salazckin.github.io/third/services/supevision-n-support">Согласование
-                            перепланировок и технадзор</a>
                     </div>
                     <div class="subnav__item">
                         <a class="subnav__link" href="{% url 'main:construction' %}">Строительство

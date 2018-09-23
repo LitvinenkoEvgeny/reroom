@@ -142,16 +142,14 @@
                         <div class="row">
                             <div class="col-lg-9">
                                 <h1 class="hero-title">
-                                    Меняем любое пространство к&nbsp;лучшему: строим дома, делаем ремонт в квартирах и
-                                    офисах
-
+                                    {{ index_page.first_heading }}
                                 </h1>
                             </div>
                         </div>
                     </div>
                     <button class="scroll-down" type="button">
                         <div class="scroll-down__caption">
-                            вниз
+                            {{ index_page.down_text }}
                         </div>
                         <div class="scroll-down__line"></div>
                     </button>
@@ -171,10 +169,10 @@
                             </div>
                             <div class="parallax-block__text">
                                 <h2 class="parallax-block__title h1-like">
-                                    Дизайн<br/>и&nbsp;проектирование
+                                    {{ index_page.second_screen_heading }}
                                 </h2>
                                 <div class="parallax-block__subtitle h3-like">
-                                    Продумываем до мелочей,<br/> бережём ваше время
+                                    {{ index_page.second_screen_descr }}
                                 </div>
 
                                 <a class="parallax-block__more "
@@ -198,10 +196,10 @@
                             </div>
                             <div class="parallax-block__text">
                                 <h2 class="parallax-block__title h1-like">
-                                    Ремонт квартир<br/>и&nbsp;домов
+                                    {{ index_page.third_screen_heading }}
                                 </h2>
                                 <div class="parallax-block__subtitle h3-like">
-                                    Минимализм и&nbsp;лаконичность для&nbsp;комфортной жизни
+                                    {{ index_page.third_screen_descr }}
                                 </div>
 
                                 <a class="parallax-block__more "
@@ -225,10 +223,11 @@
                             </div>
                             <div class="parallax-block__text">
                                 <h2 class="parallax-block__title h1-like">
-                                    Ремонт<br>офисов
+                                    {{ index_page.fourth_screen_heading }}
+                                    <br>
                                 </h2>
                                 <div class="parallax-block__subtitle h3-like">
-                                    Создаём пространство,<br/> где удобно заниматься своим делом
+                                    {{ index_page.fourth_screen_descr }}
                                 </div>
 
                                 <a class="parallax-block__more"
@@ -252,10 +251,10 @@
                             </div>
                             <div class="parallax-block__text">
                                 <h2 class="parallax-block__title h1-like">
-                                    Строительство домов
+                                    {{ index_page.fifth_screen_heading }}
                                 </h2>
                                 <div class="parallax-block__subtitle h3-like">
-                                    Эстетичные и функциональные<br/> дома, снаружи и внутри
+                                    {{ index_page.fifth_screen_descr }}
                                 </div>
 
                                 <a class="parallax-block__more"
@@ -267,7 +266,7 @@
 
                 <div class="section section-projects" data-from="bottom">
                     <div class="container">
-                        <h2 class="section__title h1-like">Проекты</h2>
+                        <h2 class="section__title h1-like">{{ index_page.sixth_screen_heading }}</h2>
 
 
                         <div class="projects-stack">

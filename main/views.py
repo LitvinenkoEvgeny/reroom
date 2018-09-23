@@ -1,9 +1,13 @@
 from django.shortcuts import render_to_response
+from .models import IndexPage
 
 
 # Create your views here.
 def index(request):
-    return render_to_response('main/index.html')
+    context = {
+        'index_page': IndexPage.objects.get(pk=1)
+    }
+    return render_to_response('main/index.html', context=context)
 
 
 def about(request):
