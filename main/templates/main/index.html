@@ -132,9 +132,9 @@
                 <div class="section section-hero section--active" data-nav-color="#ffffff">
                     <div class="section-hero__bg">
                         <picture>
-                            <source srcset="{% static 'main/content/data/3/01-home-slide.png' %}" type="image/webp">
-                            <source srcset="{% static 'main/content/data/3/01-home-slide.png' %}" type="image/png">
-                            <img src="{% static 'main/content/data/3/01-home-slide.png' %}"/>
+                            <source srcset="{{ index_page.first_image.url }}" type="image/webp">
+                            <source srcset="{{ index_page.first_image.url }}" type="image/png">
+                            <img src="{{ index_page.first_image.url }}"/>
                         </picture>
 
                     </div>
@@ -159,11 +159,11 @@
                         <div class="parallax-block">
                             <div class="parallax-block__img-w">
                                 <picture>
-                                    <source srcset="{% static 'main/content/data/5/02-home-slide.png' %}"
+                                    <source srcset="{{ index_page.second_image.url }}"
                                             type="image/webp">
-                                    <source srcset="{% static 'main/content/data/5/02-home-slide.png' %}"
+                                    <source srcset="{{ index_page.second_image.url }}"
                                             type="image/png">
-                                    <img src="{% static 'main/content/data/5/02-home-slide.png' %}"/>
+                                    <img src="{{ index_page.second_image.url }}"/>
                                 </picture>
 
                             </div>
@@ -186,11 +186,11 @@
                         <div class="parallax-block">
                             <div class="parallax-block__img-w">
                                 <picture>
-                                    <source srcset="{% static 'main/content/data/9/03-home-slide.png' %}"
+                                    <source srcset="{{ index_page.third_image.url }}"
                                             type="image/webp">
-                                    <source srcset="{% static 'main/content/data/9/03-home-slide.png' %}"
+                                    <source srcset="{{ index_page.third_image.url }}"
                                             type="image/png">
-                                    <img src="{% static 'main/content/data/9/03-home-slide.png' %}"/>
+                                    <img src="{{ index_page.third_image.url }}"/>
                                 </picture>
 
                             </div>
@@ -213,11 +213,11 @@
                         <div class="parallax-block">
                             <div class="parallax-block__img-w">
                                 <picture>
-                                    <source srcset="{% static 'main/content/data/2/04-home-slide.png' %}"
+                                    <source srcset="{{ index_page.third_image.url }}"
                                             type="image/webp">
-                                    <source srcset="{% static 'main/content/data/2/04-home-slide.png' %}"
+                                    <source srcset="{{ index_page.third_image.url }}"
                                             type="image/png">
-                                    <img src="{% static 'main/content/data/2/04-home-slide.png' %}"/>
+                                    <img src="{{ index_page.third_image.url }}"/>
                                 </picture>
 
                             </div>
@@ -241,11 +241,11 @@
                         <div class="parallax-block">
                             <div class="parallax-block__img-w">
                                 <picture>
-                                    <source srcset="{% static 'main/content/data/3/05-home-slide.png' %}"
+                                    <source srcset="{{ index_page.third_image.url }}"
                                             type="image/webp">
-                                    <source srcset="{% static 'main/content/data/3/05-home-slide.png' %}"
+                                    <source srcset="{{ index_page.third_image.url }}"
                                             type="image/png">
-                                    <img src="{% static 'main/content/data/3/05-home-slide.png' %}"/>
+                                    <img src="{{ index_page.third_image.url }}"/>
                                 </picture>
 
                             </div>
