@@ -1,12 +1,13 @@
 from django.shortcuts import render_to_response
-from .models import IndexPage, ContactInfo
+from .models import IndexPage, ContactInfo, ServicesPage
 
 
 # Create your views here.
 def index(request):
     context = {
         'index_page': IndexPage.objects.all().first(),
-        'contact': ContactInfo.objects.all().first()
+        'contact': ContactInfo.objects.all().first(),
+        'service_objects': ServicesPage.objects.all().first().get_random_catalog_items(3)
     }
     return render_to_response('main/index.html', context=context)
 

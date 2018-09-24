@@ -1,4 +1,5 @@
 import os
+import random
 from django.db import models
 from django.utils.html import mark_safe
 from django.core.exceptions import ValidationError
@@ -76,6 +77,9 @@ class ServicesPage(models.Model):
     single_item_top_right_heading = models.CharField(max_length=500)
     single_item_bottom_left_heading = models.CharField(max_length=500)
     single_item_bottom_right_heading = models.CharField(max_length=500)
+
+    def get_random_catalog_items(self, number_of_items):
+        return random.sample(list(self.catalogitem_set.filter(show_on_main=True)), number_of_items)
 
     def save(self, *args, **kwargs):
         if ServicesPage.objects.exists() and not self.pk:
