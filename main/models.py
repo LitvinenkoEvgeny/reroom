@@ -67,3 +67,49 @@ class ContactInfo(models.Model):
             raise ValidationError(
                 'Вы не можете дважды добавить объект контакты, просто редактируйте предыдущий')
         return super(ContactInfo, self).save(*args, **kwargs)
+
+
+class ServicesPage(models.Model):
+    services_page_title = models.CharField(max_length=200)
+
+    single_item_top_left_heading = models.CharField(max_length=500)
+    single_item_top_right_heading = models.CharField(max_length=500)
+    single_item_bottom_left_heading = models.CharField(max_length=500)
+    single_item_bottom_right_heading = models.CharField(max_length=500)
+
+    def save(self, *args, **kwargs):
+        if ServicesPage.objects.exists() and not self.pk:
+            # if you'll not check for self.pk
+            # then error will also raised in update of exists model
+            raise ValidationError(
+                'Вы не можете дважды добавить объект главной страницы, просто редактируйте предыдущий')
+        return super(ServicesPage, self).save(*args, **kwargs)
+
+
+class CatalogItem(models.Model):
+    UPLOAD_TO = os.path.join('admin', 'services')
+
+    SERVICE_TYPES = (
+        ('design', 'Дизайн'),
+        ('house', 'Ремонт квартир и домов'),
+        ('office', 'Ремонт офисоф'),
+        ('construction', 'Строительство домов'),
+    )
+
+    show_on_main = models.BooleanField(default=False)
+    name = models.CharField(max_length=500)
+    type = models.CharField(max_length=80, choices=SERVICE_TYPES)
+    main_img = models.ImageField(upload_to=UPLOAD_TO, blank=True)
+    top_left = models.DateField()
+    top_right = models.CharField(max_length=500)
+    bottom_left = models.CharField(max_length=500)
+    bottom_right = models.CharField(max_length=500)
+
+    def __str__(self):
+        return f'{self.name} - {self.type}'
+
+
+class CatalogItemImg(models.Model):
+    image_field = models.ImageField(upload_to=CatalogItem.UPLOAD_TO, blank=True)
+    catalog_item = models.ForeignKey('CatalogItem', on_delete=models.CASCADE, blank=False)
+    timestamp = models.DateTimeField(auto_now=True)
