@@ -1,0 +1,174 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block body %}
+
+    <div class="wrapper">
+        {% include 'main/includes/header.html' %}
+        {% include 'main/includes/menu.html' %}
+
+        <div class="p-projects-details">
+
+
+            <div class="pd-panel pd-panel--closed">
+                <div class="pd-panel-head">
+                    <a class="pd-panel-head__all" href="https://salazckin.github.io/third/catalog">
+                        <i class="icon-all-projects"></i>
+                        <span>все проекты</span>
+                    </a>
+                    <button class="pd-panel-head__info" type="button">
+                        <i class="icon-close"></i>
+                        <span>инфо</span>
+                    </button>
+                </div>
+                <div class="pd-panel-body">
+                    <div class="pd-panel-body__inner">
+                        <div class="pd-panel-body__control">
+                            <a href="https://salazckin.github.io/third/catalog" title="Все проекты">
+                                <i class="icon-all-projects"></i>
+                            </a>
+                            <button data-pdslider-arr="next" type="button">
+                                <i class="icon-arrow-right"></i>
+                            </button>
+                            <button data-pdslider-arr="prev" type="button">
+                                <i class="icon-arrow-left"></i>
+                            </button>
+                        </div>
+                        <h1 class="pd-panel-body__title h2-like">{{ catalog_item.name }}</h1>
+                        <ul class="pd-panel-body__list">
+                            <li class="pd-row">
+                                <div class="pr-row__icon">
+                                    <i class="icon-date"></i>
+                                </div>
+                                <div class="pd-row__info">
+                                    <div class="pd-row__key">Дата</div>
+                                    <div class="pd-row__value">{{ catalog_item.top_left }}</div>
+                                </div>
+                            </li>
+                            <li class="pd-row">
+                                <div class="pr-row__icon">
+                                    <i class="icon-address"></i>
+                                </div>
+                                <div class="pd-row__info">
+                                    <div class="pd-row__key">Адрес</div>
+                                    <div class="pd-row__value">{{ catalog_item.top_right }}</div>
+                                </div>
+                            </li>
+                            <li class="pd-row">
+                                <div class="pr-row__icon">
+                                    <i class="icon-architect"></i>
+                                </div>
+                                <div class="pd-row__info">
+                                    <div class="pd-row__key">Архитектор</div>
+                                    <div class="pd-row__value">{{ catalog_item.bottom_left }}</div>
+                                </div>
+                            </li>
+                            <li class="pd-row">
+                                <div class="pr-row__icon">
+                                    <i class="icon-photographer"></i>
+                                </div>
+                                <div class="pd-row__info">
+                                    <div class="pd-row__key">Фотограф</div>
+                                    <div class="pd-row__value">{{ catalog_item.bottom_right }}</div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="pd-panel-body__gallery">
+                            <div class="fraction">
+                                <button class="fraction__arrow" data-pdslider-arr="prev" type="button">
+                                    <i class="icon-arrow-left"></i>
+                                </button>
+
+                                <div class="fraction__info">
+                                    <div class="fraction__nums">
+                                        <span class="fraction__current">1</span>
+                                        <span class="fraction__separ">/</span>
+                                        <span class="fraction__max">9</span>
+                                    </div>
+                                    <div class="fraction__caption">фотогалерея</div>
+                                </div>
+
+                                <button class="fraction__arrow" data-pdslider-arr="next" type="button">
+                                    <i class="icon-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="pd-slider">
+                {% for catalog_item_img in catalog_item.catalogitemimg_set.all %}
+                    <div class="pd-slider__slide">
+                        <div class="slick-effect">
+                            <img class="slick-effect__img" data-lazy="{{ catalog_item_img.image_field.url }}" alt=""/>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+
+            <div class="pd-m-controls">
+                <button type="button" data-pdslider-arr="prev">
+                    <i class="icon-arrow-left"></i>
+                </button>
+                <a href="https://salazckin.github.io/third/catalog">
+                    <i class="icon-all-projects"></i>
+                </a>
+                <button type="button" data-pdslider-arr="next">
+                    <i class="icon-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="pd-mcard">
+                <div class="pd-mcard__inner">
+
+                    <h1 class="pd-mcard__title h2-like">Квартира-студия</h1>
+                    <ul class="pd-mcard__list">
+                        <li class="pd-row">
+                            <div class="pr-row__icon">
+                                <i class="icon-date"></i>
+                            </div>
+                            <div class="pd-row__info">
+                                <div class="pd-row__key">Дата</div>
+                                <div class="pd-row__value">17.06.2017</div>
+                            </div>
+                        </li>
+                        <li class="pd-row">
+                            <div class="pr-row__icon">
+                                <i class="icon-address"></i>
+                            </div>
+                            <div class="pd-row__info">
+                                <div class="pd-row__key">Адрес</div>
+                                <div class="pd-row__value">Москва, ул. Дурова 29</div>
+                            </div>
+                        </li>
+                        <li class="pd-row">
+                            <div class="pr-row__icon">
+                                <i class="icon-architect"></i>
+                            </div>
+                            <div class="pd-row__info">
+                                <div class="pd-row__key">Архитектор</div>
+                                <div class="pd-row__value">Иван Иванов</div>
+                            </div>
+                        </li>
+                        <li class="pd-row">
+                            <div class="pr-row__icon">
+                                <i class="icon-photographer"></i>
+                            </div>
+                            <div class="pd-row__info">
+                                <div class="pd-row__key">Фотограф</div>
+                                <div class="pd-row__value">Иван Иванов</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        {% include 'main/includes/footer.html' %}
+    </div>
+{% endblock %}
+
