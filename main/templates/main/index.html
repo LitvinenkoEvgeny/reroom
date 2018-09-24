@@ -272,7 +272,7 @@
                         <div class="projects-stack">
                             <div class="projects-stack__col projects-stack__col--lg">
                                 <a class="project-card project-card--black-text" data-aos="fade-up"
-                                   href="https://salazckin.github.io/third/catalog/123">
+                                   href="{{ service_objects.0.get_absolute_url }}">
                                     <div class="project-card__img-w">
                                         <picture>
                                             <source srcset="{{ service_objects.0.main_img.url }}"
@@ -295,7 +295,7 @@
 
                                 {% for service_object in service_objects|slice:"1:" %}
                                     <a class="project-card project-card--sm project-card--black-text" data-aos="fade-up"
-                                       href="https://salazckin.github.io/third/catalog/123">
+                                       href="{{ service_object.get_absolute_url }}">
                                         <div class="project-card__img-w">
                                             <picture>
                                                 <source srcset="{{ service_object.main_img.url }}"

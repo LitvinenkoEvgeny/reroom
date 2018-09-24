@@ -1,6 +1,7 @@
 import os
 import random
 from django.db import models
+from django.urls import reverse
 from django.utils.html import mark_safe
 from django.core.exceptions import ValidationError
 
@@ -109,6 +110,9 @@ class CatalogItem(models.Model):
     top_right = models.CharField(max_length=500)
     bottom_left = models.CharField(max_length=500)
     bottom_right = models.CharField(max_length=500)
+
+    def get_absolute_url(self):
+        return reverse('main:catalog-item', kwargs={'pk': self.pk})
 
     def __str__(self):
         return f'{self.name} - {self.type}'
