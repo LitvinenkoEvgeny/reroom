@@ -5,30 +5,30 @@
                 <div class="footer-row__col">
                     <ul class="footer-list">
                         <li>
-                            <a rel="nofollow" class="group text-nowrap" href="tel:+7 495 222 33 11">
+                            <a rel="nofollow" class="group text-nowrap" href="tel:{{ contact.phone }}">
                                 <i class="icon-phone"></i>
-                                <span>+7 495 222 33 11</span>
+                                <span>{{ contact.phone }}</span>
                             </a>
                         </li>
                         <li>
-                            <a rel="nofollow" class="group" href="mailto:info@reroom.ru">
+                            <a rel="nofollow" class="group" href="mailto:{{ contact.email }}">
                                 <i class="icon-email"></i>
-                                <span>	salazckin@gmail.ru</span>
+                                <span>{{ contact.email }}</span>
                             </a>
                         </li>
                         <li>
                             <div class="group">
                                 <i class="icon-map-point"></i>
-                                <span>Москва, ул. Дурова 29</span>
+                                <span>{{ contact.addr }}</span>
                             </div>
                         </li>
                     </ul>
                     <ul class="footer-list">
                         <li>
-                            <a class="group" href="https://www.instagram.com" target="_blank" rel="external"
+                            <a class="group" href="{{ contact.instagram_link }}" target="_blank" rel="external"
                                title="инстаграм">
                                 <i class="icon-instagram"></i>
-                                <span>Подписывайтесь на наш инстаграм!</span>
+                                <span>{{ contact.instagram_text }}</span>
                             </a>
                         </li>
                     </ul>
@@ -74,7 +74,7 @@
             <div class="footer-bot__info">
                 <div class="footer-bot__copyright"></div>
                 <div class="footer-bot__dev">
-                    разработка сайта — salazckin.github.io
+                    {{ contact.development }}
 
                 </div>
             </div>

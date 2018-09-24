@@ -13,7 +13,6 @@ class IndexPage(models.Model):
         verbose_name_plural = 'Главная страница'
 
     learn_more_text = models.CharField(max_length=1000, verbose_name='Текст для кнопки узнать больше')
-    contact_info = models.CharField(max_length=17, verbose_name='Номер телефона')
     first_heading = models.CharField(max_length=1000, verbose_name='Заголовок на главной странице')
     first_image = models.ImageField(verbose_name='Картинка, отображающаяся на главной странице', blank=True,
                                     upload_to=UPLOAD_TO)
@@ -44,3 +43,27 @@ class IndexPage(models.Model):
             raise ValidationError(
                 'Вы не можете дважды добавить объект главной страницы, просто редактируйте предыдущий')
         return super(IndexPage, self).save(*args, **kwargs)
+
+
+class ContactInfo(models.Model):
+    phone = models.TextField(max_length=50)
+    email = models.TextField(max_length=100)
+    addr = models.TextField(max_length=500)
+    instagram_text = models.TextField(max_length=500)
+    instagram_link = models.URLField(max_length=500)
+    development = models.TextField(max_length=500)
+
+    class Meta:
+        verbose_name = 'Контакты'
+        verbose_name_plural = 'Контакты'
+
+    def __str__(self):
+        return 'Контакты'
+
+    def save(self, *args, **kwargs):
+        if ContactInfo.objects.exists() and not self.pk:
+            # if you'll not check for self.pk
+            # then error will also raised in update of exists model
+            raise ValidationError(
+                'Вы не можете дважды добавить объект контакты, просто редактируйте предыдущий')
+        return super(ContactInfo, self).save(*args, **kwargs)
