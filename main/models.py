@@ -92,15 +92,16 @@ class CatalogItem(models.Model):
     SERVICE_TYPES = (
         ('design', 'Дизайн'),
         ('house', 'Ремонт квартир и домов'),
-        ('office', 'Ремонт офисоф'),
+        ('office', 'Ремонт офисов'),
         ('construction', 'Строительство домов'),
     )
 
+    service = models.ForeignKey('ServicesPage', on_delete=models.CASCADE, blank=True)
     show_on_main = models.BooleanField(default=False)
     name = models.CharField(max_length=500)
     type = models.CharField(max_length=80, choices=SERVICE_TYPES)
     main_img = models.ImageField(upload_to=UPLOAD_TO, blank=True)
-    top_left = models.DateField()
+    top_left = models.CharField(max_length=500)
     top_right = models.CharField(max_length=500)
     bottom_left = models.CharField(max_length=500)
     bottom_right = models.CharField(max_length=500)
