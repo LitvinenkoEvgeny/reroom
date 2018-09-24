@@ -275,58 +275,46 @@
                                    href="https://salazckin.github.io/third/catalog/123">
                                     <div class="project-card__img-w">
                                         <picture>
-                                            <source srcset="{% static 'main/content/data/6/Aivazovsky-001.png' %}"
+                                            <source srcset="{{ service_objects.0.main_img.url }}"
                                                     type="image/webp">
-                                            <source srcset="{% static 'main/content/data/6/Aivazovsky-001.png' %}"
+                                            <source srcset="{{ service_objects.0.main_img.url }}"
                                                     type="image/png">
-                                            <img src="{% static 'main/content/data/6/Aivazovsky-001.png' %}"/>
+                                            <img src="{{ service_objects.0.main_img.url }}"/>
                                         </picture>
 
                                     </div>
                                     <div class="project-card__decor"></div>
                                     <div class="project-card__text">
-                                        <div class="project-card__title">Квартира-студия</div>
-                                        <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
+                                        <div class="project-card__title">{{ service_objects.0.name }}</div>
+                                        <div class="project-card__subtitle">{{ service_objects.0.top_right }}</div>
                                     </div>
                                 </a>
                             </div>
                             <div class="projects-stack__col">
-                                <a class="project-card project-card--sm project-card--black-text" data-aos="fade-up"
-                                   href="https://salazckin.github.io/third/catalog/123">
-                                    <div class="project-card__img-w">
-                                        <picture>
-                                            <source srcset="{% static 'main/content/data/7/Chertanovo-001.png' %}"
-                                                    type="image/webp">
-                                            <source srcset="{% static 'main/content/data/7/Chertanovo-001.png' %}"
-                                                    type="image/png">
-                                            <img src="{% static 'main/content/data/7/Chertanovo-001.png' %}"/>
-                                        </picture>
 
-                                    </div>
-                                    <div class="project-card__decor"></div>
-                                    <div class="project-card__text">
-                                        <div class="project-card__title">Квартира-студия</div>
-                                        <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
-                                    </div>
-                                </a>
-                                <a class="project-card project-card--sm project-card--black-text" data-aos="fade-up"
-                                   href="https://salazckin.github.io/third/catalog/123">
-                                    <div class="project-card__img-w">
-                                        <picture>
-                                            <source srcset="{% static 'main/content/data/8/M-Zhukova-001.png' %}"
-                                                    type="image/webp">
-                                            <source srcset="{% static 'main/content/data/8/M-Zhukova-001.png' %}"
-                                                    type="image/png">
-                                            <img src="{% static 'main/content/data/8/M-Zhukova-001.png' %}"/>
-                                        </picture>
 
-                                    </div>
-                                    <div class="project-card__decor"></div>
-                                    <div class="project-card__text">
-                                        <div class="project-card__title">Квартира-студия</div>
-                                        <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
-                                    </div>
-                                </a>
+                                {% for service_object in service_objects|slice:"1:" %}
+                                    <a class="project-card project-card--sm project-card--black-text" data-aos="fade-up"
+                                       href="https://salazckin.github.io/third/catalog/123">
+                                        <div class="project-card__img-w">
+                                            <picture>
+                                                <source srcset="{{ service_object.main_img.url }}"
+                                                        type="image/webp">
+                                                <source srcset="{{ service_object.main_img.url }}"
+                                                        type="image/png">
+                                                <img src="{{ service_object.main_img }}"/>
+                                            </picture>
+
+                                        </div>
+                                        <div class="project-card__decor"></div>
+                                        <div class="project-card__text">
+                                            <div class="project-card__title">{{ service_object.name }}</div>
+                                            <div class="project-card__subtitle">{{ service_object.top_right }}</div>
+                                        </div>
+                                    </a>
+                                {% endfor %}
+
+
                             </div>
                         </div>
 
