@@ -46,12 +46,12 @@ class IndexPage(models.Model):
 
 
 class ContactInfo(models.Model):
-    phone = models.TextField(max_length=50)
-    email = models.TextField(max_length=100)
-    addr = models.TextField(max_length=500)
-    instagram_text = models.TextField(max_length=500)
+    phone = models.CharField(max_length=50)
+    email = models.CharField(max_length=100)
+    addr = models.CharField(max_length=500)
+    instagram_text = models.CharField(max_length=500)
     instagram_link = models.URLField(max_length=500)
-    development = models.TextField(max_length=500)
+    development = models.CharField(max_length=500)
 
     class Meta:
         verbose_name = 'Контакты'
