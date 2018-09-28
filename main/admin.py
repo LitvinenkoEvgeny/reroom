@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import IndexPage, ContactInfo, CatalogItem, ServicesPage, CatalogItemImg
+from .models import IndexPage, ContactInfo, CatalogItem, ProjectsPage, CatalogItemImg
 
 
 class CatalogItemImgAdminInline(admin.StackedInline):
@@ -12,5 +12,5 @@ class CatalogItemAdmin(admin.ModelAdmin):
 
 admin.site.register(IndexPage)
 admin.site.register(ContactInfo)
-admin.site.register(ServicesPage)
+admin.site.register(ProjectsPage)
 admin.site.register(CatalogItem, CatalogItemAdmin)

@@ -70,7 +70,7 @@ class ContactInfo(models.Model):
         return super(ContactInfo, self).save(*args, **kwargs)
 
 
-class ServicesPage(models.Model):
+class ProjectsPage(models.Model):
     services_page_title = models.CharField(max_length=200)
 
     single_item_top_left_heading = models.CharField(max_length=500)
@@ -82,10 +82,10 @@ class ServicesPage(models.Model):
         return random.sample(list(self.catalogitem_set.filter(show_on_main=True)), number_of_items)
 
     def save(self, *args, **kwargs):
-        if ServicesPage.objects.exists() and not self.pk:
+        if ProjectsPage.objects.exists() and not self.pk:
             raise ValidationError(
                 'Вы не можете дважды добавить объект главной страницы, просто редактируйте предыдущий')
-        return super(ServicesPage, self).save(*args, **kwargs)
+        return super(ProjectsPage, self).save(*args, **kwargs)
 
 
 class CatalogItem(models.Model):
@@ -98,7 +98,7 @@ class CatalogItem(models.Model):
         ('construction', 'Строительство домов'),
     )
 
-    service = models.ForeignKey('ServicesPage', on_delete=models.CASCADE, blank=True)
+    service = models.ForeignKey('ProjectsPage', on_delete=models.CASCADE, blank=True)
     show_on_main = models.BooleanField(default=False)
     name = models.CharField(max_length=500)
     type = models.CharField(max_length=80, choices=SERVICE_TYPES)
