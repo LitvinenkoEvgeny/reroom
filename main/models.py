@@ -3,6 +3,8 @@ import random
 from django.db import models
 from django.urls import reverse
 from django.core.exceptions import ValidationError
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
 
 
 # FIXME: refactor this shit
@@ -39,8 +41,6 @@ class IndexPage(models.Model):
 
     def save(self, *args, **kwargs):
         if IndexPage.objects.exists() and not self.pk:
-            # if you'll not check for self.pk
-            # then error will also raised in update of exists model
             raise ValidationError(
                 'Вы не можете дважды добавить объект главной страницы, просто редактируйте предыдущий')
         return super(IndexPage, self).save(*args, **kwargs)
@@ -83,8 +83,6 @@ class ServicesPage(models.Model):
 
     def save(self, *args, **kwargs):
         if ServicesPage.objects.exists() and not self.pk:
-            # if you'll not check for self.pk
-            # then error will also raised in update of exists model
             raise ValidationError(
                 'Вы не можете дважды добавить объект главной страницы, просто редактируйте предыдущий')
         return super(ServicesPage, self).save(*args, **kwargs)
@@ -121,3 +119,19 @@ class CatalogItemImg(models.Model):
     image_field = models.ImageField(upload_to=CatalogItem.UPLOAD_TO, blank=True)
     catalog_item = models.ForeignKey('CatalogItem', on_delete=models.CASCADE, blank=False)
     timestamp = models.DateTimeField(auto_now=True)
+
+#
+# class ServicesPage(models.Model):
+#     pass
+#
+#
+# class HeadingAndText(models.Model):
+#     heading = models.TextField(max_length=300)
+#     text = models.TextField(max_length=5000)
+#
+#     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+#     object_id = models.PositiveIntegerField()
+#     content_object = GenericForeignKey('content_type', 'object_id')
+#
+#     def __str__(self):
+#         return self.heading
