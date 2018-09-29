@@ -3,7 +3,7 @@ import random
 from django.db import models
 from django.urls import reverse
 from django.core.exceptions import ValidationError
-from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelation
 from django.contrib.contenttypes.models import ContentType
 
 
@@ -120,18 +120,21 @@ class CatalogItemImg(models.Model):
     catalog_item = models.ForeignKey('CatalogItem', on_delete=models.CASCADE, blank=False)
     timestamp = models.DateTimeField(auto_now=True)
 
-#
-# class ServicesPage(models.Model):
-#     pass
-#
-#
-# class HeadingAndText(models.Model):
-#     heading = models.TextField(max_length=300)
-#     text = models.TextField(max_length=5000)
-#
-#     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
-#     object_id = models.PositiveIntegerField()
-#     content_object = GenericForeignKey('content_type', 'object_id')
-#
-#     def __str__(self):
-#         return self.heading
+
+class ServicesPage(models.Model):
+    title = models.CharField(max_length=500)
+    heading = models.TextField(max_length=500)
+    text_block_left = models.TextField(max_length=1500)
+    text_block_right = models.TextField(max_length=1500)
+
+
+class HeadingAndText(models.Model):
+    heading = models.TextField(max_length=300)
+    text = models.TextField(max_length=5000)
+
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    object_id = models.PositiveIntegerField()
+    content_object = GenericForeignKey('content_type', 'object_id')
+
+    def __str__(self):
+        return self.heading
