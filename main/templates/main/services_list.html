@@ -10,45 +10,45 @@
         <div class="p-services">
             <div class="page-head">
                 <div class="page-head__inner container">
-                    <h1 class="page-head__title">Услуги по дизайну, ремонту и отделке</h1>
+                    <h1 class="page-head__title">{{ services_page.heading|safe }}</h1>
                 </div>
             </div>
             <div class="block bg-white">
                 <div class="container-md mb-md">
                     <div class="row">
                         <div class="col-md-6">
-                            <p>Предлагаем полный спектр ремонтно-строительных услуг, чтобы вы&nbsp;могли насладиться
-                                качеством и&nbsp;комфортом, отвечающим всем правилам безопасности. Все процессы
-                                строительства и&nbsp;ремонта, контролируются одним из&nbsp;главных инженеров компании.
-                                Все сотрудники компании, имеют высокую квалификацию и&nbsp;большой опыт в&nbsp;строительной
-                                сфере. </p>
+                            <p>{{ services_page.text_block_left }}</p>
                         </div>
                         <div class="col-md-6">
-                            <p>В&nbsp;штате компании, есть как универсальные мастера, так и&nbsp;мастера узкого профиля.
-                                Все сложные работы, требующие профильных знаний (например, сантехнические или
-                                электромонтажные работы), выполняются грамотными специалистами, имеющими все необходимые
-                                допуски. </p>
+                            <p>{{ services_page.text_block_right }}</p>
                         </div>
                     </div>
                 </div>
                 <div class="container">
                     <ul class="all-services">
-                        <li class="all-services__item" data-aos="fade-up">
-                            <a class="service-link" href="https://salazckin.github.io/third/services/design">
-                                <div class="service-link__img-w">
-                                    <picture>
-                                        <source srcset="{% static 'main/content/data/7/design.jpg' %}"
-                                                type="image/webp">
-                                        <source srcset="{% static 'main/content/data/7/design.jpg' %}"
-                                                type="image/jpeg">
-                                        <img src="{% static 'main/content/data/7/design.jpg' %}"
-                                             alt="Дизайн и проектирование"/>
-                                    </picture>
 
-                                </div>
-                                <div class="service-link__name h3-like">Дизайн и проектирование</div>
-                            </a>
-                        </li>
+                        {% for service_item in object_list %}
+
+                            <li class="all-services__item" data-aos="fade-up">
+                                <a class="service-link" href="{{ service_item.get_absolute_url }}">
+                                    <div class="service-link__img-w">
+                                        <picture>
+                                            <source srcset="{{ service_item.preview_img.url }}"
+                                                    type="image/webp">
+                                            <source srcset="{{ service_item.preview_img.url }}"
+                                                    type="image/jpeg">
+                                            <img src="{{ service_item.preview_img.url }}"
+                                                 alt="{{ service_item.name }}"/>
+                                        </picture>
+
+                                    </div>
+                                    <div class="service-link__name h3-like">{{ service_item.name }}</div>
+                                </a>
+                            </li>
+
+                        {% endfor %}
+
+
                         <li class="all-services__item" data-aos="fade-up">
                             <a class="service-link" href="https://salazckin.github.io/third/services/home-repairs">
                                 <div class="service-link__img-w">
