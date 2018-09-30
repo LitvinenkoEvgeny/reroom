@@ -52,19 +52,19 @@
                         <a class="subnav__link" href="{% url 'main:services' %}">В раздел</a>
                     </div>
                     <div class="subnav__item">
-                        <a class="subnav__link" href="{% url 'main:design' %}">Дизайн
+                        <a class="subnav__link" href="{% url 'main:services-item' type='design' %}">Дизайн
                             и проектирование</a>
                     </div>
                     <div class="subnav__item">
-                        <a class="subnav__link" href="{% url 'main:home-repair' %}">Ремонт
+                        <a class="subnav__link" href="{% url 'main:services-item' type='house repair' %}">Ремонт
                             квартир и домов</a>
                     </div>
                     <div class="subnav__item">
                         <a class="subnav__link"
-                           href="{% url 'main:office-repair' %}">Ремонт офисов</a>
+                           href="{% url 'main:services-item' type='office repair' %}">Ремонт офисов</a>
                     </div>
                     <div class="subnav__item">
-                        <a class="subnav__link" href="{% url 'main:construction' %}">Строительство
+                        <a class="subnav__link" href="{% url 'main:services-item' type='construction' %}">Строительство
                             домов</a>
                     </div>
                 </div>
