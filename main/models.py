@@ -63,8 +63,6 @@ class ContactInfo(models.Model):
 
     def save(self, *args, **kwargs):
         if ContactInfo.objects.exists() and not self.pk:
-            # if you'll not check for self.pk
-            # then error will also raised in update of exists model
             raise ValidationError(
                 'Вы не можете дважды добавить объект контакты, просто редактируйте предыдущий')
         return super(ContactInfo, self).save(*args, **kwargs)
@@ -126,6 +124,36 @@ class ServicesPage(models.Model):
     heading = models.TextField(max_length=500)
     text_block_left = models.TextField(max_length=1500)
     text_block_right = models.TextField(max_length=1500)
+
+
+class ServicesItem(models.Model):
+    SERVICE_TYPE = [
+        ['design', 'Дизайн'],
+        ['house repair', 'Ремонт квартир и домов'],
+        ['office repair', 'Ремонт офисов'],
+        ['construction', 'Строительство домов'],
+    ]
+
+    UPLOAD_TO = os.path.join('admin', 'index', 'services')
+
+    type = models.CharField(max_length=150, choices=SERVICE_TYPE)
+    name = models.TextField(max_length=500)
+    preview_img = models.ImageField(upload_to=UPLOAD_TO, blank=True)
+    main_img = models.ImageField(upload_to=UPLOAD_TO, blank=True)
+    image_text = models.TextField(max_length=500)
+    projects = models.ManyToManyField('CatalogItem', blank=True)
+    accordions = models.ForeignKey('ServiceItemAccordion', blank=True, on_delete=models.DO_NOTHING)
+
+    def __str__(self):
+        return self.name
+
+
+class ServiceItemAccordion(models.Model):
+    title = models.TextField(max_length=100)
+    items = GenericRelation('HeadingAndText')
+
+    def __str__(self):
+        return self.title
 
 
 class HeadingAndText(models.Model):
