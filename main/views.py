@@ -48,22 +48,6 @@ class ServiceItemDetail(mixins.ContactInfoMixin, DetailView):
             return get_object_or_404(models.ServicesItem, type=self.kwargs['type'])
 
 
-def design(request):
-    return render_to_response('main/design.html')
-
-
-def home_repair(request):
-    return render_to_response('main/home-repair.html')
-
-
-def office_repair(request):
-    return render_to_response('main/office-repair.html')
-
-
-def construction(request):
-    return render_to_response('main/construction.html')
-
-
 def contacts(request):
     return render_to_response('main/contacts.html')
 
