@@ -1,10 +1,169 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% load reroom_template_tags %}
+{% for chunk in items|get_chunks:3 %}
+    {% if chunk|length == 1 %}
+        <div class="projects-stack">
+            <div class="projects-stack__col projects-stack__col--lg">
+                <a class="project-card project-card--white-text" data-aos="fade-up"
+                   href="{{ chunk.0.get_absolute_url }}">
+                    <div class="project-card__img-w">
+                        <picture>
+                            <source srcset="{{ chunk.0.main_img.url }}"
+                                    type="image/webp">
+                            <source srcset="{{ chunk.0.main_img.url }}"
+                                    type="image/png">
+                            <img src="{{ chunk.0.main_img.url }}"/>
+                        </picture>
+
+                    </div>
+                    <div class="project-card__decor"></div>
+                    <div class="project-card__text">
+                        <div class="project-card__title">{{ chunk.0.name }}</div>
+                        <div class="project-card__subtitle">{{ chunk.0.top_right }}</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    {% endif %}
+    {% if chunk|length == 2 %}
+        2 {{ chunk }}
+    {% endif %}
+
+
+    {% if chunk|length == 3 %}
+
+        <div class="projects-stack">
+            {% if forloop.counter|divisibleby:2 %}
+
+                <div class="projects-stack__col">
+                    <a class="project-card project-card--sm project-card--black-text"
+                       data-aos="fade-up"
+                       href="{{ chunk.0.get_absolute_url }}">
+                        <div class="project-card__img-w">
+                            <picture>
+                                <source srcset="{{ chunk.0.main_img.url }}"
+                                        type="image/webp">
+                                <source srcset="{{ chunk.0.main_img.url }}"
+                                        type="image/png">
+                                <img src="{{ chunk.0.main_img.url }}"/>
+                            </picture>
+
+                        </div>
+                        <div class="project-card__decor"></div>
+                        <div class="project-card__text">
+                            <div class="project-card__title">{{ chunk.0.name }}</div>
+                            <div class="project-card__subtitle">{{ chunk.0.top_right }}</div>
+                        </div>
+                    </a>
+                    <a class="project-card project-card--sm project-card--white-text"
+                       data-aos="fade-up"
+                       href="{{ chunk.1.get_absolute_url }}">
+                        <div class="project-card__img-w">
+                            <picture>
+                                <source srcset="{{ chunk.1.main_img.url }}"
+                                        type="image/webp">
+                                <source srcset="{{ chunk.1.main_img.url }}"
+                                        type="image/png">
+                                <img src="{{ chunk.1.main_img.url }}"/>
+                            </picture>
+
+                        </div>
+                        <div class="project-card__decor"></div>
+                        <div class="project-card__text">
+                            <div class="project-card__title">{{ chunk.1.name }}</div>
+                            <div class="project-card__subtitle">{{ chunk.1.top_right }}</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="projects-stack__col projects-stack__col--lg">
+                    <a class="project-card project-card--black-text" data-aos="fade-up"
+                       href="{{ chunk.2.get_absolute_url }}">
+                        <div class="project-card__img-w">
+                            <picture>
+                                <source srcset="{{ chunk.2.main_img.url }}"
+                                        type="image/webp">
+                                <source srcset="{{ chunk.2.main_img.url }}"
+                                        type="image/png">
+                                <img src="{{ chunk.2.main_img.url }}"/>
+                            </picture>
+
+                        </div>
+                        <div class="project-card__decor"></div>
+                        <div class="project-card__text">
+                            <div class="project-card__title">{{ chunk.2.name }}</div>
+                            <div class="project-card__subtitle">{{ chunk.2.right_top }}</div>
+                        </div>
+                    </a>
+                </div>
+
+
+            {% else %}
+
+
+                <div class="projects-stack__col projects-stack__col--lg">
+                    <a class="project-card project-card--white-text" data-aos="fade-up"
+                       href="{{ chunk.1.get_absolute_url }}">
+                        <div class="project-card__img-w">
+                            <picture>
+                                <source srcset="{{ chunk.0.main_img.url }}"
+                                        type="image/webp">
+                                <source srcset="{{ chunk.0.main_img.url }}"
+                                        type="image/png">
+                                <img src="{{ chunk.0.main_img.url }}"
+                                     alt="Квартира на&#160;Красногорском бульваре"/>
+                            </picture>
+
+                        </div>
+                        <div class="project-card__decor"></div>
+                        <div class="project-card__text">
+                            <div class="project-card__title">{{ chunk.0.name }}</div>
+                            <div class="project-card__subtitle">{{ chunk.0.right_top }}</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="projects-stack__col">
+                    <a class="project-card project-card--sm project-card--black-text"
+                       data-aos="fade-up"
+                       href="{{ chunk.1.get_absolute_url }}">
+                        <div class="project-card__img-w">
+                            <picture>
+                                <source srcset="{{ chunk.1.main_img.url }}"
+                                        type="image/webp">
+                                <source srcset="{{ chunk.1.main_img.url }}"
+                                        type="image/png">
+                                <img src="{{ chunk.1.main_img.url }}"/>
+                            </picture>
+
+                        </div>
+                        <div class="project-card__decor"></div>
+                        <div class="project-card__text">
+                            <div class="project-card__title">{{ chunk.1.name }}</div>
+                            <div class="project-card__subtitle">{{ chunk.1.right_top }}</div>
+                        </div>
+                    </a>
+                    <a class="project-card project-card--sm project-card--black-text"
+                       data-aos="fade-up"
+                       href="{{ chunk.2.get_absolute_url }}">
+                        <div class="project-card__img-w">
+                            <picture>
+                                <source srcset="{{ chunk.2.main_img.url }}"
+                                        type="image/webp">
+                                <source srcset="{{ chunk.2.main_img.url }}"
+                                        type="image/png">
+                                <img src="{{ chunk.2.main_img.url }}"/>
+                            </picture>
+
+                        </div>
+                        <div class="project-card__decor"></div>
+                        <div class="project-card__text">
+                            <div class="project-card__title"> {{ chunk.2.name }} </div>
+                            <div class="project-card__subtitle">{{ chunk.2.right_top }}</div>
+                        </div>
+                    </a>
+                </div>
+
+
+            {% endif %}
+        </div>
+
+    {% endif %}
+{% endfor %}
