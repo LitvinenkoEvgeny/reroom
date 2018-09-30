@@ -7,8 +7,16 @@ from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelatio
 from django.contrib.contenttypes.models import ContentType
 
 
+class SingleInstansOnlyMixin(object):
+    def save(self, *args, **kwargs):
+        if self.__class__.objects.exists() and not self.pk:
+            raise ValidationError(
+                f'Вы не можете дважды добавить объект {self._meta.verbose_name}, просто редактируйте предыдущий')
+        return super(SingleInstansOnlyMixin, self).save(*args, **kwargs)
+
+
 # FIXME: refactor this shit
-class IndexPage(models.Model):
+class IndexPage(SingleInstansOnlyMixin, models.Model):
     UPLOAD_TO = os.path.join('admin', 'index')
 
     class Meta:
@@ -39,14 +47,8 @@ class IndexPage(models.Model):
     def __str__(self):
         return 'Главная страница'
 
-    def save(self, *args, **kwargs):
-        if IndexPage.objects.exists() and not self.pk:
-            raise ValidationError(
-                'Вы не можете дважды добавить объект главной страницы, просто редактируйте предыдущий')
-        return super(IndexPage, self).save(*args, **kwargs)
 
-
-class ContactInfo(models.Model):
+class ContactInfo(SingleInstansOnlyMixin, models.Model):
     phone = models.CharField(max_length=50)
     email = models.CharField(max_length=100)
     addr = models.CharField(max_length=500)
@@ -61,14 +63,8 @@ class ContactInfo(models.Model):
     def __str__(self):
         return 'Контакты'
 
-    def save(self, *args, **kwargs):
-        if ContactInfo.objects.exists() and not self.pk:
-            raise ValidationError(
-                'Вы не можете дважды добавить объект контакты, просто редактируйте предыдущий')
-        return super(ContactInfo, self).save(*args, **kwargs)
 
-
-class ProjectsPage(models.Model):
+class ProjectsPage(SingleInstansOnlyMixin, models.Model):
     services_page_title = models.CharField(max_length=200)
 
     single_item_top_left_heading = models.CharField(max_length=500)
@@ -78,12 +74,6 @@ class ProjectsPage(models.Model):
 
     def get_random_catalog_items(self, number_of_items):
         return random.sample(list(self.catalogitem_set.filter(show_on_main=True)), number_of_items)
-
-    def save(self, *args, **kwargs):
-        if ProjectsPage.objects.exists() and not self.pk:
-            raise ValidationError(
-                'Вы не можете дважды добавить объект главной страницы, просто редактируйте предыдущий')
-        return super(ProjectsPage, self).save(*args, **kwargs)
 
 
 class CatalogItem(models.Model):
@@ -146,6 +136,9 @@ class ServicesItem(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('main:services-item', kwargs={'type': self.type})
 
     # Можно создать только один инстанс с типом Дизайн/Ремонт квартир/Ремонт офисов etc.
     def save(self, *args, **kwargs):
