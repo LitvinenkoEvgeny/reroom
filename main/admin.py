@@ -35,6 +35,15 @@ class ServiceItemAccordionInline(admin.StackedInline):
     extra = 0
 
 
+class HeadingAndTextImageInline(admin.StackedInline):
+    model = reroom_models.HeadingAndTextImage
+    extra = 0
+
+
+class HeadingAndTextAdmin(admin.ModelAdmin):
+    inlines = [HeadingAndTextImageInline]
+
+
 admin.site.register(reroom_models.IndexPage)
 admin.site.register(reroom_models.ContactInfo)
 admin.site.register(reroom_models.ProjectsPage)
@@ -42,3 +51,4 @@ admin.site.register(reroom_models.CatalogItem, CatalogItemAdmin)
 admin.site.register(reroom_models.ServicesPage, ServicePageAdmin)
 admin.site.register(reroom_models.ServiceItemAccordion, ServiceAccordionItemAdmin)
 admin.site.register(reroom_models.ServicesItem)
+admin.site.register(reroom_models.HeadingAndText, HeadingAndTextAdmin)
