@@ -132,7 +132,8 @@ class ServicesItem(models.Model):
     main_img = models.ImageField(upload_to=UPLOAD_TO, blank=True)
     image_text = models.TextField(max_length=500)
     projects = models.ManyToManyField('CatalogItem', blank=True)
-    accordions = models.ForeignKey('ServiceItemAccordion', blank=True, on_delete=models.DO_NOTHING)
+    headings_with_text_blocks = models.ManyToManyField('HeadingAndText', blank=True)
+    accordion = models.ForeignKey('ServiceItemAccordion', blank=True, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.name
@@ -167,3 +168,10 @@ class HeadingAndText(models.Model):
 
     def __str__(self):
         return self.heading
+
+
+class HeadingAndTextImage(models.Model):
+    UPLOAD_TO = os.path.join('admin', 'misc')
+
+    heading = models.ForeignKey('HeadingAndText', on_delete=models.CASCADE, related_name='images')
+    img = models.ImageField(upload_to=UPLOAD_TO)
