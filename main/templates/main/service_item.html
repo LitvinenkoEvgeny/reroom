@@ -1,5 +1,6 @@
 {% extends 'main/layout.html' %}
 {% load static %}
+{% load reroom_template_tags %}
 
 {% block body %}
     <div class="wrapper">
@@ -10,38 +11,28 @@
 
             <div class="page-head">
                 <div class="page-head__inner container">
-                    <h1 class="page-head__title">Дизайн и проектирование</h1>
+                    <h1 class="page-head__title">{{ object.name }}</h1>
                 </div>
             </div>
             <div class="block bg-white pb-sm static-content">
                 <div class="container-md mb-md">
                     <div class="row row-grid-sm">
-                        <div class="col-md-6">
-                            <h2>Стиль и целостность</h2>
+                        {% for heading_and_text in object.headings_with_text_blocks.all|slice:":2" %}
+                            <div class="col-md-6">
+                                <h2>{{ heading_and_text.heading }}</h2>
 
-                            <p>Мы&nbsp;помогаем объединить представления клиентов об&nbsp;идеальном пространстве в&nbsp;целостную
-                                концепцию, продумываем каждую деталь с&nbsp;точки зрения стилистики и&nbsp;технического
-                                воплощения.</p>
+                                <p>{{ heading_and_text.text }}</p>
 
-                        </div>
-                        <div class="col-md-6">
-                            <h2>Концептуальный подход</h2>
-
-                            <p>Мы&nbsp;умеем сочетать самые разные материалы и&nbsp;решения, можем
-                                <nobr>по-новому</nobr>
-                                взглянуть на&nbsp;классику, комбинируем стили и&nbsp;дополняем необычными аксессуарами,
-                                чтобы в&nbsp;итоге получить идеальный и&nbsp;законченный концептуальный интерьер.
-                            </p>
-
-                        </div>
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="container">
                     <div class="jumb jumb--sm"
-                         style="background-image: url({% static 'main/content/data/3/2/img-01.png' %});">
+                         style="background-image: url({{ object.main_img.url }});">
                         <div class="jumb__line"></div>
                         <div class="jumb__content">
-                            <div class="h3-like">Минимализм и&#160;лаконичность для&#160;комфортной жизни</div>
+                            <div class="h3-like">{{ object.image_text }}</div>
                         </div>
                         <div class="jumb__line"></div>
                     </div>
@@ -51,323 +42,74 @@
             <div class="block bg-white pb-sm static-content">
                 <div class="container-md mb-md">
                     <div class="row row-grid-sm">
-                        <div class="col-md-6">
-                            <h2>Работаем по&nbsp;<nobr>дизайн-проекту</nobr>
-                            </h2>
+                        {% for chunk in object.headings_with_text_blocks.all|slice:"2:"|divide_by:2 %}
+                            <div class="col-md-6">
+                                {% for heading_and_text in chunk %}
+                                    <h3>{{ heading_and_text.heading|safe }}</h3>
 
-                            <h3>Экономим время</h3>
+                                    <p>{{ heading_and_text.text|safe }}</p>
 
-                            <p>Нас выбирают, потому что мы&nbsp;ценим время наших клиентов. Качественный
-                                <nobr>дизайн-проект</nobr>
-                                помогает нам заранее определить весь объём работ и&nbsp;спланировать график
-                                производства, чтобы не&nbsp;тратить время клиента на&nbsp;согласование тех или иных
-                                моментов во&nbsp;время ремонта.
-                            </p>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
 
-                            <h3>Исключаем ошибки</h3>
-
-                            <p>Детальный
-                                <nobr>дизайн-проект</nobr>&nbsp;&mdash; это залог качественного ремонта. Когда заранее
-                                продумана концепция интерьера, внешний вид и&nbsp;расположение каждой детали, то&nbsp;ремонтные
-                                работы выполняются точно по&nbsp;плану. Исключаются ошибки и&nbsp;необходимость их&nbsp;исправления.
-                            </p>
-
-                            <h3>Делаем то, что задумано</h3>
-
-                            <p>Во&nbsp;время разработки
-                                <nobr>дизайн-проекта</nobr>
-                                <nobr>архитектор-дизайнер</nobr>
-                                и&nbsp;клиент приходят к&nbsp;тождественному пониманию того, как будет выглядеть
-                                пространство после ремонта.
-                                <nobr>Дизайн-проект</nobr>&nbsp;&mdash; наилучший способ сформировать визуальные
-                                представления клиента в&nbsp;понятную и&nbsp;однозначную для обеих сторон концепцию.
-                            </p>
-
-                        </div>
-                        <div class="col-md-6">
-                            <h2>Что мы&nbsp;любим в&nbsp;интерьерах</h2>
-
-                            <h3>Функциональность и&nbsp;комфорт</h3>
-
-                            <p>Нам нравится воплощать современные решения для успешных и&nbsp;активных людей. Мы&nbsp;используем
-                                пространство эффективно, зонируем его так, чтобы каждый член семьи чувствовал себя
-                                комфортно.</p>
-
-                            <h3>Открытое и&nbsp;светлое пространство</h3>
-
-                            <p>Когда всё продумано и&nbsp;на&nbsp;своих местах&nbsp;&mdash; нет ничего лишнего. Мы&nbsp;применяем
-                                разные типы перегородок, создаём специальные конструкции, подбираем световые решения
-                                таким образом, чтобы в&nbsp;помещениях было достаточно пространства и&nbsp;света.</p>
-
-                            <h3>Интересные сочетания</h3>
-
-                            <p>Мы&nbsp;умеем сочетать самые разные материалы и&nbsp;решения, можем
-                                <nobr>по-новому</nobr>
-                                взглянуть на&nbsp;классику, комбинируем стили и&nbsp;дополняем необычными аксессуарами,
-                                чтобы в&nbsp;итоге получить идеальный и&nbsp;законченный концептуальный интерьер.
-                            </p>
-
-                        </div>
                     </div>
                 </div>
             </div>
             <div class="block">
                 <div class="container-md">
-                    <div class="ddown-list-title">Список услуг по дизайну и проектированию</div>
+                    <div class="ddown-list-title">{{ object.accordion.title }}</div>
                     <div class="ddown-list">
-                        <div class="ddown">
-                            <div class="ddown-head">
-                                <div class="ddown-head__name">Планировка помещения</div>
-                                <div class="ddown-head__toggle">
-                                    <div class="plus">
-                                        <div class="plus__line-1"></div>
-                                        <div class="plus__line-2"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ddown-body">
-                                <div class="ddown-body__inner">
-                                    <div class="static-content">
-                                        <p>Планировка помещения выглядит как схема с&nbsp;обмерным планом, размерами
-                                            будущих помещений, расстановкой мебели и&nbsp;организацией пространства.</p>
-
-                                        <p>Такая схема позволяет дизайнеру и&nbsp;подрядчику видеть, как будет
-                                            организовано пространство в&nbsp;помещении с&nbsp;учетом функциональных
-                                            требований заказчика.</p>
-
-                                        <div class="slick">
-                                            <div class="slick__item">
-                                                <picture>
-                                                    <source srcset="http://tavannaya.ru/wp-content/uploads/2015/02/varianty-planirovok-vannoi-komnaty-srednih-razmerov.jpeg"
-                                                            type="image/png">
-                                                    <img src="http://tavannaya.ru/wp-content/uploads/2015/02/varianty-planirovok-vannoi-komnaty-srednih-razmerov.jpeg"
-                                                         alt="Планировка помещения"/>
-                                                </picture>
-
-                                            </div>
-                                            <div class="slick__item">
-                                                <picture>
-                                                    <source srcset="http://www.lart-du-style.ru/assets/files/images/sostavproekta/s_rasstanovkoi_mebeli.jpg"
-                                                            type="image/png">
-                                                    <img src="http://www.lart-du-style.ru/assets/files/images/sostavproekta/s_rasstanovkoi_mebeli.jpg"
-                                                         alt="Планировка помещения"/>
-                                                </picture>
-
-                                            </div>
-                                            <div class="slick__item">
-                                                <picture>
-                                                    <source srcset="http://tavannaya.ru/wp-content/uploads/2015/02/varianty-planirovok-vannoi-komnaty-srednih-razmerov.jpeg"
-                                                            type="image/png">
-                                                    <img src="http://tavannaya.ru/wp-content/uploads/2015/02/varianty-planirovok-vannoi-komnaty-srednih-razmerov.jpeg"
-                                                         alt="Планировка помещения"/>
-                                                </picture>
-
-                                            </div>
+                        {% for accordion_heading_with_text in object.accordion.items.all %}
+                            <div class="ddown">
+                                <div class="ddown-head">
+                                    <div class="ddown-head__name">{{ accordion_heading_with_text.heading|safe }}</div>
+                                    <div class="ddown-head__toggle">
+                                        <div class="plus">
+                                            <div class="plus__line-1"></div>
+                                            <div class="plus__line-2"></div>
                                         </div>
-
-                                        <p>Пример планировки продемонстрирован на&nbsp;основе проекта ...</p>
-
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="ddown">
-                            <div class="ddown-head">
-                                <div class="ddown-head__name">Техническая документация</div>
-                                <div class="ddown-head__toggle">
-                                    <div class="plus">
-                                        <div class="plus__line-1"></div>
-                                        <div class="plus__line-2"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ddown-body">
-                                <div class="ddown-body__inner">
-                                    <div class="static-content">
-                                        <p>Рабочие чертежи играют огромную роль при проведении ремонтных работ. В&nbsp;них
-                                            указывается расположение сантехники, выводы электрических узлов,
-                                            расположение осветительного оборудования и&nbsp;много другой информации,
-                                            которая помогает избежать множества ошибок.</p>
+                                <div class="ddown-body">
+                                    <div class="ddown-body__inner">
+                                        <div class="static-content">
+                                            {{ accordion_heading_with_text.text|safe }}
 
-                                        <p>Наличие технической документации, позволяет заказчику продумать эргономику
-                                            помещения и&nbsp;зафиксировать свои пожелания на&nbsp;начальном этапе. Таким
-                                            образом, экономится огромное количество времени, которое тратится на&nbsp;объяснение
-                                            задуманного объема работ.</p>
+                                            {% if accordion_heading_with_text.images.exists %}
 
-                                        <div class="slick">
-                                            <div class="slick__item">
-                                                <picture>
-                                                    <source srcset="http://tavannaya.ru/wp-content/uploads/2015/02/varianty-planirovok-vannoi-komnaty-srednih-razmerov.jpeg"
-                                                            type="image/webp">
-                                                    <source srcset="http://tavannaya.ru/wp-content/uploads/2015/02/varianty-planirovok-vannoi-komnaty-srednih-razmerov.jpeg"
-                                                            type="image/png">
-                                                    <img src="http://tavannaya.ru/wp-content/uploads/2015/02/varianty-planirovok-vannoi-komnaty-srednih-razmerov.jpeg"
-                                                         alt="Техническая документация"/>
-                                                </picture>
+                                                <div class="slick">
 
-                                            </div>
-                                            <div class="slick__item">
-                                                <picture>
-                                                    <source srcset="http://www.lart-du-style.ru/assets/files/images/sostavproekta/s_rasstanovkoi_mebeli.jpg"
-                                                            type="image/webp">
-                                                    <source srcset="http://www.lart-du-style.ru/assets/files/images/sostavproekta/s_rasstanovkoi_mebeli.jpg"
-                                                            type="image/png">
-                                                    <img src="http://www.lart-du-style.ru/assets/files/images/sostavproekta/s_rasstanovkoi_mebeli.jpg"
-                                                         alt="Техническая документация"/>
-                                                </picture>
+                                                    {% for accordion_img in accordion_heading_with_text.images.all %}
 
-                                            </div>
-                                            <div class="slick__item">
-                                                <picture>
-                                                    <source srcset="http://tavannaya.ru/wp-content/uploads/2015/02/varianty-planirovok-vannoi-komnaty-srednih-razmerov.jpeg"
-                                                            type="image/webp">
-                                                    <source srcset="http://tavannaya.ru/wp-content/uploads/2015/02/varianty-planirovok-vannoi-komnaty-srednih-razmerov.jpeg"
-                                                            type="image/png">
-                                                    <img src="http://tavannaya.ru/wp-content/uploads/2015/02/varianty-planirovok-vannoi-komnaty-srednih-razmerov.jpeg"
-                                                         alt="Техническая документация"/>
-                                                </picture>
+                                                        <div class="slick__item">
+                                                            <picture>
+                                                                <source srcset="{{ accordion_img.img.url }}"
+                                                                        type="image/png">
+                                                                <img src="{{ accordion_img.img.url }}"
+                                                                     alt="{{ accordion_img.img.heading }}"/>
+                                                            </picture>
+                                                        </div>
 
-                                            </div>
+                                                    {% endfor %}
 
+                                                </div>
+                                            {% endif %}
                                         </div>
-
-                                        <p>Пример показан на&nbsp;базе проекта ...</p>
-
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="ddown">
-                            <div class="ddown-head">
-                                <div class="ddown-head__name">Визуальный ряд помещения</div>
-                                <div class="ddown-head__toggle">
-                                    <div class="plus">
-                                        <div class="plus__line-1"></div>
-                                        <div class="plus__line-2"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ddown-body">
-                                <div class="ddown-body__inner">
-                                    <div class="static-content">
-                                        <p>Визуальный ряд необходим для полного понимания вида будущего помещения.
-                                            Качественно выполненная визуализация полностью отображает вид готового
-                                            помещения с&nbsp;расставленной мебелью, декором и&nbsp;аксессуарами,
-                                            выбранными клиентом.</p>
 
-                                        <p>Часто, вместо полноценной визуализации, дизайнеры делают эскиз. Обычно эскиз
-                                            рисуется вручную и&nbsp;отображает общий вид будущего интерьера. С&nbsp;финансовой
-                                            точки зрения, эскиз стоит на&nbsp;порядок дешевле, полноценной
-                                            3D-визуализации проекта.</p>
-
-                                        <div class="slick">
-                                            <div class="slick__item">
-                                                <picture>
-                                                    <source srcset="http://tavannaya.ru/wp-content/uploads/2015/02/varianty-planirovok-vannoi-komnaty-srednih-razmerov.jpeg"
-                                                            type="image/webp">
-                                                    <source srcset="http://tavannaya.ru/wp-content/uploads/2015/02/varianty-planirovok-vannoi-komnaty-srednih-razmerov.jpeg"
-                                                            type="image/png">
-                                                    <img src="http://tavannaya.ru/wp-content/uploads/2015/02/varianty-planirovok-vannoi-komnaty-srednih-razmerov.jpeg"/>
-                                                </picture>
-
-                                            </div>
-                                            <div class="slick__item">
-                                                <picture>
-                                                    <source srcset="http://tavannaya.ru/wp-content/uploads/2015/02/varianty-planirovok-vannoi-komnaty-srednih-razmerov.jpeg"
-                                                            type="image/webp">
-                                                    <source srcset="http://tavannaya.ru/wp-content/uploads/2015/02/varianty-planirovok-vannoi-komnaty-srednih-razmerov.jpeg"
-                                                            type="image/png">
-                                                    <img src="http://tavannaya.ru/wp-content/uploads/2015/02/varianty-planirovok-vannoi-komnaty-srednih-razmerov.jpeg"/>
-                                                </picture>
-
-                                            </div>
-                                            <div class="slick__item">
-                                                <picture>
-                                                    <source srcset="http://tavannaya.ru/wp-content/uploads/2015/02/varianty-planirovok-vannoi-komnaty-srednih-razmerov.jpeg"
-                                                            type="image/webp">
-                                                    <source srcset="http://tavannaya.ru/wp-content/uploads/2015/02/varianty-planirovok-vannoi-komnaty-srednih-razmerov.jpeg"
-                                                            type="image/png">
-                                                    <img src="http://tavannaya.ru/wp-content/uploads/2015/02/varianty-planirovok-vannoi-komnaty-srednih-razmerov.jpeg"/>
-                                                </picture>
-
-                                            </div>
-
-
-                                        </div>
-
-                                        <p>Пример визуализации</p>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
             <div class="block">
                 <div class="container">
 
-
-                    <div class="projects-stack">
-                        <div class="projects-stack__col projects-stack__col--lg">
-                            <a class="project-card project-card--black-text" data-aos="fade-up"
-                               href="../../catalog/123">
-                                <div class="project-card__img-w">
-                                    <picture>
-                                        <source srcset="{% static 'main/content/data/6/Aivazovsky-001.png' %}"
-                                                type="image/webp">
-                                        <source srcset="{% static 'main/content/data/6/Aivazovsky-001.png' %}"
-                                                type="image/png">
-                                        <img src="{% static 'main/content/data/6/Aivazovsky-001.png' %}"/>
-                                    </picture>
-
-                                </div>
-                                <div class="project-card__decor"></div>
-                                <div class="project-card__text">
-                                    <div class="project-card__title">Квартира-студия</div>
-                                    <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="projects-stack__col">
-                            <a class="project-card project-card--sm project-card--black-text" data-aos="fade-up"
-                               href="../../catalog/123">
-                                <div class="project-card__img-w">
-                                    <picture>
-                                        <source srcset="{% static 'main/content/data/7/Chertanovo-001.png' %}"
-                                                type="image/webp">
-                                        <source srcset="{% static 'main/content/data/7/Chertanovo-001.png' %}"
-                                                type="image/png">
-                                        <img src="{% static 'main/content/data/7/Chertanovo-001.png' %}"/>
-                                    </picture>
-
-                                </div>
-                                <div class="project-card__decor"></div>
-                                <div class="project-card__text">
-                                    <div class="project-card__title">Квартира-студия</div>
-                                    <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
-                                </div>
-                            </a>
-                            <a class="project-card project-card--sm project-card--black-text" data-aos="fade-up"
-                               href="../../catalog/123">
-                                <div class="project-card__img-w">
-                                    <picture>
-                                        <source srcset="{% static 'main/content/data/8/M-Zhukova-001.png' %}"
-                                                type="image/webp">
-                                        <source srcset="{% static 'main/content/data/8/M-Zhukova-001.png' %}"
-                                                type="image/png">
-                                        <img src="{% static 'main/content/data/8/M-Zhukova-001.png' %}"/>
-                                    </picture>
-
-                                </div>
-                                <div class="project-card__decor"></div>
-                                <div class="project-card__text">
-                                    <div class="project-card__title">Квартира-студия</div>
-                                    <div class="project-card__subtitle">Москва, ул. Дурова 29</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                    {% with object.projects.all as items %}
+                        {% include 'main/includes/projects-stack.html' %}
+                    {% endwith %}
 
 
                 </div>
