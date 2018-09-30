@@ -147,6 +147,14 @@ class ServicesItem(models.Model):
     def __str__(self):
         return self.name
 
+    # Можно создать только один инстанс с типом Дизайн/Ремонт квартир/Ремонт офисов etc.
+    def save(self, *args, **kwargs):
+        first_service_item = ServicesItem.objects.filter(type=self.type).first()
+        if self.pk == first_service_item.pk:
+            return super(ServicesItem, self).save(*args, **kwargs)
+        else:
+            raise ValidationError(f'Вы можете создать только один объект с типом {self.type}')
+
 
 class ServiceItemAccordion(models.Model):
     title = models.TextField(max_length=100)
