@@ -36,33 +36,27 @@
                 <div class="footer-row__col">
                     <ul class="footer-list footer-list--sm">
                         <li>
-                            <a href="#">Дизайн и проектирование</a>
+                            <a href="{% url 'main:services-item' type='design' %}">Дизайн и проектирование</a>
                         </li>
                         <li>
-                            <a href="#">Ремонт квартир и домов</a>
+                            <a href="{% url 'main:services-item' type='house repair' %}">Ремонт квартир и домов</a>
                         </li>
                         <li>
-                            <a href="#">Ремонт офисов</a>
+                            <a href="{% url 'main:services-item' type='office repair' %}">Ремонт офисов</a>
                         </li>
                         <li>
-                            <a href="#">Строительство домов</a>
+                            <a href="{% url 'main:services-item' type='construction' %}">Строительство домов</a>
                         </li>
                         <li>
-                            <a href="#">Проекты</a>
+                            <a href="{% url 'main:catalog' %}">Проекты</a>
                         </li>
                     </ul>
                     <ul class="footer-list footer-list--sm">
                         <li>
-                            <a href="#">Согласование перепланировок</a>
+                            <a href="{% url 'main:about' %}">О компании</a>
                         </li>
                         <li>
-                            <a href="#">Технический надзор</a>
-                        </li>
-                        <li>
-                            <a href="#">О компании</a>
-                        </li>
-                        <li>
-                            <a href="#">Контакты</a>
+                            <a href="{% url 'main:contacts' %}">Контакты</a>
                         </li>
                     </ul>
                 </div>
