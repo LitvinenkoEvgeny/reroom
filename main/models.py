@@ -86,12 +86,15 @@ class ContactInfo(SingleInstanceOnly, models.Model):
 
 
 class ProjectsPage(SingleInstanceOnly, models.Model):
-    services_page_title = models.CharField(max_length=200)
+    services_page_title = models.CharField(max_length=200, verbose_name='Заголовок страницы Projects')
+    single_item_top_left_heading = models.CharField(max_length=500, verbose_name='Заголовок в левом верхнем углу')
+    single_item_top_right_heading = models.CharField(max_length=500, verbose_name='Заголовок в правом верхнем углу')
+    single_item_bottom_left_heading = models.CharField(max_length=500, verbose_name='Заголовок в левом нижнем углу')
+    single_item_bottom_right_heading = models.CharField(max_length=500, verbose_name='Заголовок в правом нижнем углу')
 
-    single_item_top_left_heading = models.CharField(max_length=500)
-    single_item_top_right_heading = models.CharField(max_length=500)
-    single_item_bottom_left_heading = models.CharField(max_length=500)
-    single_item_bottom_right_heading = models.CharField(max_length=500)
+    class Meta:
+        verbose_name = 'Страница Projects'
+        verbose_name_plural = 'Страница Projects'
 
     def get_random_catalog_items(self, number_of_items):
         return random.sample(list(self.catalogitem_set.filter(show_on_main=True)), number_of_items)
