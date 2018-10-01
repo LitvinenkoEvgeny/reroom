@@ -132,9 +132,15 @@ class CatalogItem(models.Model):
 
 
 class CatalogItemImg(models.Model):
-    image_field = models.ImageField(upload_to=CatalogItem.UPLOAD_TO, blank=True)
-    catalog_item = models.ForeignKey('CatalogItem', on_delete=models.CASCADE, blank=False)
+    image_field = models.ImageField(upload_to=CatalogItem.UPLOAD_TO, blank=True,
+                                    verbose_name='Маленькая картинка на странице services')
+    catalog_item = models.ForeignKey('CatalogItem', on_delete=models.CASCADE, blank=False,
+                                     verbose_name='Объекты из каталога')
     timestamp = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Картинка айтема каталога'
+        verbose_name_plural = 'Картинки айтемов каталога'
 
 
 class ServicesPage(models.Model):
