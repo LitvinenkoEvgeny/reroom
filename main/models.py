@@ -207,12 +207,16 @@ class ServiceItemAccordion(models.Model):
 
 
 class HeadingAndText(models.Model):
-    heading = models.TextField(max_length=300)
-    text = models.TextField(max_length=5000)
+    heading = models.TextField(max_length=300, verbose_name='Заголовок')
+    text = models.TextField(max_length=5000, verbose_name='Текст')
 
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
-    object_id = models.PositiveIntegerField()
+    object_id = models.PositiveIntegerField(default=1)
     content_object = GenericForeignKey('content_type', 'object_id')
+
+    class Meta:
+        verbose_name_plural = 'Заголовки с текстом'
+        verbose_name = 'Заголовок и текст'
 
     def __str__(self):
         return self.heading
