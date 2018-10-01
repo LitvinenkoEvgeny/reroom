@@ -195,8 +195,12 @@ class ServicesItem(models.Model):
 
 
 class ServiceItemAccordion(models.Model):
-    title = models.TextField(max_length=100)
-    items = GenericRelation('HeadingAndText')
+    title = models.TextField(max_length=100, verbose_name='Заголовок')
+    items = GenericRelation('HeadingAndText', verbose_name='Заголовки с текстом')
+
+    class Meta:
+        verbose_name_plural = 'Аккордионы айтемов услуги'
+        verbose_name = 'Аккордион айтема услуги'
 
     def __str__(self):
         return self.title
