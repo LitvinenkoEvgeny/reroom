@@ -164,14 +164,20 @@ class ServicesItem(models.Model):
 
     UPLOAD_TO = os.path.join('admin', 'index', 'services')
 
-    type = models.CharField(max_length=150, choices=SERVICE_TYPE)
-    name = models.TextField(max_length=500)
-    preview_img = models.ImageField(upload_to=UPLOAD_TO, blank=True)
-    main_img = models.ImageField(upload_to=UPLOAD_TO, blank=True)
-    image_text = models.TextField(max_length=500)
-    projects = models.ManyToManyField('CatalogItem', blank=True)
-    headings_with_text_blocks = models.ManyToManyField('HeadingAndText', blank=True)
-    accordion = models.ForeignKey('ServiceItemAccordion', blank=True, on_delete=models.DO_NOTHING)
+    type = models.CharField(max_length=150, choices=SERVICE_TYPE, verbose_name='Тип услуги')
+    name = models.TextField(max_length=500, verbose_name='Название')
+    preview_img = models.ImageField(upload_to=UPLOAD_TO, blank=True, verbose_name='Картинка превью')
+    main_img = models.ImageField(upload_to=UPLOAD_TO, blank=True, verbose_name='Главная картинка')
+    image_text = models.TextField(max_length=500, verbose_name='Текст на картинке')
+    projects = models.ManyToManyField('CatalogItem', blank=True, verbose_name='Проекты')
+    headings_with_text_blocks = models.ManyToManyField('HeadingAndText', blank=True,
+                                                       verbose_name='Заголовки и текст')
+    accordion = models.ForeignKey('ServiceItemAccordion', blank=True, on_delete=models.DO_NOTHING,
+                                  verbose_name='Аккордион')
+
+    class Meta:
+        verbose_name_plural = 'Айтемы услуг'
+        verbose_name = 'Айтем услуг'
 
     def __str__(self):
         return self.name
