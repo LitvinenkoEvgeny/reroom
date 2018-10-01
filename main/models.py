@@ -185,6 +185,12 @@ class ServicesItem(models.Model):
         verbose_name_plural = 'Айтемы услуг'
         verbose_name = 'Айтем услуг'
 
+    def check_enough_headings(self, num):
+        print(self.headings_with_text_blocks.count())
+        if self.headings_with_text_blocks.count() < num:
+            raise ValidationError(
+                f'Недостаточно заголовков с текстом для сохранения, добавьте как минимум {num} заголовоков')
+
     def __str__(self):
         return self.name
 
@@ -193,8 +199,11 @@ class ServicesItem(models.Model):
 
     # Можно создать только один инстанс с типом Дизайн/Ремонт квартир/Ремонт офисов etc.
     def save(self, *args, **kwargs):
-        first_service_item = ServicesItem.objects.filter(type=self.type).first()
-        if self.pk == first_service_item.pk:
+        # self.check_enough_headings(4)
+        already_created_with_this_type = ServicesItem.objects.filter(type=self.type).first()
+        if already_created_with_this_type is None:
+            return super(ServicesItem, self).save(*args, **kwargs)
+        elif self == already_created_with_this_type:
             return super(ServicesItem, self).save(*args, **kwargs)
         else:
             raise ValidationError(f'Вы можете создать только один объект с типом {self.type}')
