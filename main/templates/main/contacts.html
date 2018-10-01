@@ -10,34 +10,34 @@
         <div class="p-contacts">
             <div class="page-head">
                 <div class="page-head__inner container">
-                    <h1 class="page-head__title">Контакты</h1>
+                    <h1 class="page-head__title">{{ object.heading }}</h1>
                 </div>
             </div>
             <div class="block bg-white pb-sm">
                 <div class="contacts-grid container-md mb-md">
                     <div class="row">
                         <div class="col-md-6">
-                            <p>Название компании
-                                <br> salazckin.github.io
+                            <p>{{ object.company_name_heading }}
+                                <br> {{ contact.company_name }}
                                 <br>
                             </p>
-                            <p>Адрес
-                                <br> Москва, ул. Дурова 29
+                            <p>{{ object.addr_heading }}
+                                <br> {{ contact.addr }}
 
                             </p>
                         </div>
                         <div class="col-md-6">
                             <p>
-                            <div>Телефон</div>
-                            <a href="tel:+7 495 222 33 11">+7 495 222 33 11</a>
+                            <div>{{ object.phone_heading }}</div>
+                            <a href="tel:{{ contact.phone }}">{{ contact.phone }}</a>
                             </p>
                             <p>
-                            <div>Время работы</div>
-                            <div>Пн-Вс: с 9.00 до 20.00</div>
+                            <div>{{ object.working_time_heading }}</div>
+                            <div>{{ contact.working_time }}</div>
                             </p>
                             <p>
-                            <div>E-mail</div>
-                            <a href="mailto:salazckin@gmail.ru">salazckin@gmail.ru</a>
+                            <div>{{ object.email_heading }}</div>
+                            <a href="{{ contact.email }}">{{ contact.email }}</a>
                             </p>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
             </div>
             <div class="block">
                 <div class="container-md mb-md">
-                    <h2 class="text-center mb-lg">НАПИСАТЬ СООБЩЕНИЕ</h2>
+                    <h2 class="text-center mb-lg">{{ object.form_heading }}</h2>
                     <form class="form" action="/feedback">
                         <div class="form__field-group">
                             <div class="form__field">
@@ -64,7 +64,7 @@
                                        placeholder="Ваш комментарий">
                             </div>
                         </div>
-                        <button class="form__submit btn btn-status" type="submit">отправить</button>
+                        <button class="form__submit btn btn-status" type="submit">{{ object.submit_text }}</button>
 
                     </form>
 

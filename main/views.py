@@ -48,8 +48,12 @@ class ServiceItemDetail(mixins.ContactInfoMixin, DetailView):
             return get_object_or_404(models.ServicesItem, type=self.kwargs['type'])
 
 
-def contacts(request):
-    return render_to_response('main/contacts.html')
+class ContactsView(mixins.ContactInfoMixin, DetailView):
+    model = models.ContactsPage
+    template_name = 'main/contacts.html'
+
+    def get_object(self, queryset=None):
+        return self.model.objects.first()
 
 
 class SingleItemView(mixins.ContactInfoMixin, DetailView):

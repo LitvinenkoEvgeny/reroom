@@ -48,10 +48,31 @@ class IndexPage(SingleInstansOnlyMixin, models.Model):
         return 'Главная страница'
 
 
+class ContactsPage(SingleInstansOnlyMixin, models.Model):
+    title = models.CharField(max_length=50, verbose_name='title страницы')
+    heading = models.TextField(verbose_name='Заголовок на первом экране')
+    company_name_heading = models.TextField(verbose_name='Заголовок названия компании')
+    addr_heading = models.TextField(verbose_name='Заголовок адреса')
+    phone_heading = models.TextField(verbose_name='Заголовок телефона')
+    working_time_heading = models.TextField(verbose_name='Заголовок время работы')
+    email_heading = models.TextField(verbose_name='Заголовок email')
+    form_heading = models.TextField(verbose_name='Заголовок над формой')
+    submit_text = models.TextField(verbose_name='Текст в кнопке формы')
+
+    class Meta:
+        verbose_name = 'Страница контакты'
+        verbose_name_plural = 'Страница контакты'
+
+    def __str__(self):
+        return 'Страница Контакты'
+
+
 class ContactInfo(SingleInstansOnlyMixin, models.Model):
+    company_name = models.CharField(max_length=500)
     phone = models.CharField(max_length=50)
     email = models.CharField(max_length=100)
     addr = models.CharField(max_length=500)
+    working_time = models.CharField(max_length=500)
     instagram_text = models.CharField(max_length=500)
     instagram_link = models.URLField(max_length=500)
     development = models.CharField(max_length=500)
