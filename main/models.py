@@ -7,16 +7,16 @@ from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelatio
 from django.contrib.contenttypes.models import ContentType
 
 
-class SingleInstansOnlyMixin(object):
+class SingleInstanceOnly(object):
     def save(self, *args, **kwargs):
         if self.__class__.objects.exists() and not self.pk:
             raise ValidationError(
                 f'Вы не можете дважды добавить объект {self._meta.verbose_name}, просто редактируйте предыдущий')
-        return super(SingleInstansOnlyMixin, self).save(*args, **kwargs)
+        return super(SingleInstanceOnly, self).save(*args, **kwargs)
 
 
 # FIXME: refactor this shit
-class IndexPage(SingleInstansOnlyMixin, models.Model):
+class IndexPage(SingleInstanceOnly, models.Model):
     UPLOAD_TO = os.path.join('admin', 'index')
 
     class Meta:
@@ -48,7 +48,7 @@ class IndexPage(SingleInstansOnlyMixin, models.Model):
         return 'Главная страница'
 
 
-class ContactsPage(SingleInstansOnlyMixin, models.Model):
+class ContactsPage(SingleInstanceOnly, models.Model):
     title = models.CharField(max_length=50, verbose_name='title страницы')
     heading = models.TextField(verbose_name='Заголовок на первом экране')
     company_name_heading = models.TextField(verbose_name='Заголовок названия компании')
@@ -67,7 +67,7 @@ class ContactsPage(SingleInstansOnlyMixin, models.Model):
         return 'Страница Контакты'
 
 
-class ContactInfo(SingleInstansOnlyMixin, models.Model):
+class ContactInfo(SingleInstanceOnly, models.Model):
     company_name = models.CharField(max_length=500)
     phone = models.CharField(max_length=50)
     email = models.CharField(max_length=100)
@@ -85,7 +85,7 @@ class ContactInfo(SingleInstansOnlyMixin, models.Model):
         return 'Контакты'
 
 
-class ProjectsPage(SingleInstansOnlyMixin, models.Model):
+class ProjectsPage(SingleInstanceOnly, models.Model):
     services_page_title = models.CharField(max_length=200)
 
     single_item_top_left_heading = models.CharField(max_length=500)
