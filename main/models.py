@@ -225,5 +225,10 @@ class HeadingAndText(models.Model):
 class HeadingAndTextImage(models.Model):
     UPLOAD_TO = os.path.join('admin', 'misc')
 
-    heading = models.ForeignKey('HeadingAndText', on_delete=models.CASCADE, related_name='images')
-    img = models.ImageField(upload_to=UPLOAD_TO)
+    heading = models.ForeignKey('HeadingAndText', on_delete=models.CASCADE, related_name='images',
+                                verbose_name='Заголовок')
+    img = models.ImageField(upload_to=UPLOAD_TO, verbose_name='Картинка')
+
+    class Meta:
+        verbose_name = 'Картинка для заголовка и текста'
+        verbose_name_plural = 'Картинки для заголовков и текста'
