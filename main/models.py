@@ -144,10 +144,14 @@ class CatalogItemImg(models.Model):
 
 
 class ServicesPage(models.Model):
-    title = models.CharField(max_length=500)
-    heading = models.TextField(max_length=500)
-    text_block_left = models.TextField(max_length=1500)
-    text_block_right = models.TextField(max_length=1500)
+    title = models.CharField(max_length=500, verbose_name='title')
+    heading = models.TextField(max_length=500, verbose_name='Заголовок')
+    text_block_left = models.TextField(max_length=1500, verbose_name='Текстовый блок слева')
+    text_block_right = models.TextField(max_length=1500, verbose_name='Текстовый блок справа')
+
+    class Meta:
+        verbose_name = 'Страница услуги'
+        verbose_name_plural = 'Страница услуги'
 
 
 class ServicesItem(models.Model):
