@@ -156,6 +156,9 @@ class ServicesPage(models.Model):
         verbose_name = 'Страница услуги'
         verbose_name_plural = 'Страница услуги'
 
+    def __str__(self):
+        return 'Страница сервисы'
+
 
 class ServicesItem(models.Model):
     SERVICE_TYPE = [
