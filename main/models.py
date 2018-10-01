@@ -96,6 +96,9 @@ class ProjectsPage(SingleInstanceOnly, models.Model):
         verbose_name = 'Страница Projects'
         verbose_name_plural = 'Страница Projects'
 
+    def __str__(self):
+        return 'Страница проекты'
+
     def get_random_catalog_items(self, number_of_items):
         return random.sample(list(self.catalogitem_set.filter(show_on_main=True)), number_of_items)
 
