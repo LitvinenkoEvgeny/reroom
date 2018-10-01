@@ -111,14 +111,18 @@ class CatalogItem(models.Model):
     )
 
     service = models.ForeignKey('ProjectsPage', on_delete=models.CASCADE, blank=True)
-    show_on_main = models.BooleanField(default=False)
-    name = models.CharField(max_length=500)
-    type = models.CharField(max_length=80, choices=SERVICE_TYPES)
-    main_img = models.ImageField(upload_to=UPLOAD_TO, blank=True)
-    top_left = models.CharField(max_length=500)
-    top_right = models.CharField(max_length=500)
-    bottom_left = models.CharField(max_length=500)
-    bottom_right = models.CharField(max_length=500)
+    show_on_main = models.BooleanField(default=False, verbose_name='Показывать на главной')
+    name = models.CharField(max_length=500, verbose_name='Имя')
+    type = models.CharField(max_length=80, choices=SERVICE_TYPES, verbose_name='Тип проекта')
+    main_img = models.ImageField(upload_to=UPLOAD_TO, blank=True, verbose_name='Главное изображение')
+    top_left = models.CharField(max_length=500, verbose_name='Текст в левом верхнем углу')
+    top_right = models.CharField(max_length=500, verbose_name='Текст в правом верхнем углу')
+    bottom_left = models.CharField(max_length=500, verbose_name='Текст в левом нижнем углу')
+    bottom_right = models.CharField(max_length=500, verbose_name='Текст в правом нижнем углу')
+
+    class Meta:
+        verbose_name = 'Проект'
+        verbose_name_plural = 'Проекты'
 
     def get_absolute_url(self):
         return reverse('main:catalog-item', kwargs={'pk': self.pk})
