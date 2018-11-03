@@ -368,7 +368,8 @@
                 <div class="section section-feedback" data-from="bottom">
                     <div class="container">
                         <h2 class="section__title h1-like">Заказать проект</h2>
-                        <form class="form" action="">
+                        <form class="form" action="{% url 'main:mail' %}">
+                            {% csrf_token %}
                             <div class="form__field-group">
                                 <div class="form__field">
                                     <input class="input-default" name="FullName" data-val="true" data-val-required
