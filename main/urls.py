@@ -11,4 +11,5 @@ urlpatterns = [
     path('services', views.ServicesListView.as_view(), name='services'),
     path('services/<str:type>', views.ServiceItemDetail.as_view(), name='services-item'),
     path('contacts', views.ContactsView.as_view(), name='contacts'),
+    path('mail', views.mail, name='mail'),
 ]
