@@ -199,6 +199,7 @@ class ServicesItem(models.Model):
 
     # Можно создать только один инстанс с типом Дизайн/Ремонт квартир/Ремонт офисов etc.
     def save(self, *args, **kwargs):
+        # Вот тут нужно запилить проверку, убедиться что есть связь минимум с 3мя headings_and_text
         # self.check_enough_headings(4)
         already_created_with_this_type = ServicesItem.objects.filter(type=self.type).first()
         if already_created_with_this_type is None:
@@ -247,3 +248,6 @@ class HeadingAndTextImage(models.Model):
     class Meta:
         verbose_name = 'Картинка для заголовка и текста'
         verbose_name_plural = 'Картинки для заголовков и текста'
+
+# TODO:
+# write models for save messages received from frontend here
