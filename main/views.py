@@ -1,4 +1,7 @@
 from django.shortcuts import render_to_response, get_object_or_404, get_list_or_404
+import json
+from django.http import HttpResponse
+from django.template.context_processors import csrf
 from . import models
 from django.views.generic import DetailView, ListView
 from . import mixins
@@ -11,6 +14,7 @@ def index(request):
         'contact': models.ContactInfo.objects.first(),
         'service_objects': models.ProjectsPage.objects.first().get_random_catalog_items(3)
     }
+    context.update(csrf(request))
     return render_to_response('main/index.html', context=context)
 
 
@@ -64,3 +68,8 @@ class SingleItemView(mixins.ContactInfoMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super(SingleItemView, self).get_context_data(**kwargs)
         return context
+
+
+def mail(request):
+    if request.method == 'POST' and request.is_ajax():
+        return HttpResponse(json.dumps({'success': 'true'}), content_type="application/json")
